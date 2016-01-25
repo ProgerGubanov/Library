@@ -39,11 +39,7 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
         order.setDatePlannedReturn(resultSet.getDate("DatePlannedReturn"));
         order.setDateActualReturn(resultSet.getTimestamp("DateActualReturn"));
         order.setDateIssue(resultSet.getTimestamp("DateIssue"));
-        if (resultSet.getInt("IsReadingRoom") == 1) {
-            order.setIsReadingRoom(true);
-        } else {
-            order.setIsReadingRoom(false);
-        }
+        order.setIsReadingRoom(resultSet.getInt("IsReadingRoom") == 1);
         return order;
     }
 

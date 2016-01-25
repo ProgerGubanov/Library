@@ -4,6 +4,7 @@ import by.epam.library.domain.Book;
 import by.epam.library.domain.BookStatus;
 import by.epam.library.domain.Card;
 import by.epam.library.exception.IncorrectFormDataException;
+import by.epam.library.local.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,14 +21,14 @@ public class BookValidator implements Validator<Book> {
             try {
                 book.setIdentity(Integer.parseInt(parameter));
             } catch (NumberFormatException e) {
-                throw new IncorrectFormDataException("identity", parameter);
+                throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.identity"), parameter);
             }
         }
         parameter = request.getParameter("inventoryNumber");
         if (parameter != null && !parameter.isEmpty()) {
             book.setInventoryNumber(parameter);
         } else {
-            throw new IncorrectFormDataException("inventoryNumber", parameter);
+            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.inventoryNumber"), parameter);
         }
         parameter = request.getParameter("identityCard");
         if (parameter != null) {
@@ -35,7 +36,7 @@ public class BookValidator implements Validator<Book> {
             card.setIdentity(Integer.parseInt(parameter));
             book.setCard(card);
         } else {
-            throw new IncorrectFormDataException("identityCard", parameter);
+            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.identityCard"), parameter);
         }
         parameter = request.getParameter("idBookStatus");
         if (parameter != null) {

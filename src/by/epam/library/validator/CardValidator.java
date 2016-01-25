@@ -2,6 +2,7 @@ package by.epam.library.validator;
 
 import by.epam.library.domain.Card;
 import by.epam.library.exception.IncorrectFormDataException;
+import by.epam.library.local.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Pattern;
@@ -24,34 +25,34 @@ public class CardValidator implements Validator<Card> {
             try {
                 card.setIdentity(Integer.parseInt(parameter));
             } catch (NumberFormatException e) {
-                throw new IncorrectFormDataException("identity", parameter);
+                throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.identity"), parameter);
             }
         }
         parameter = request.getParameter("author");
         if (parameter != null && !parameter.isEmpty()) {
             card.setAuthor(parameter);
         } else {
-            throw new IncorrectFormDataException("author", parameter);
+            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.author"), parameter);
         }
         parameter = request.getParameter("titlebook");
         if (parameter != null && !parameter.isEmpty()) {
             card.setTitle(parameter);
         } else {
-            throw new IncorrectFormDataException("title", parameter);
+            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.titleBook"), parameter);
         }
         parameter = request.getParameter("isbn");
         Matcher isbnMatcher = ISBN_PATTERN.matcher(parameter);
         if (parameter != null && !parameter.isEmpty() && isbnMatcher.matches()) {
             card.setIsbn(parameter);
         } else {
-            throw new IncorrectFormDataException("isbn", parameter);
+            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.isbn"), parameter);
         }
         parameter = request.getParameter("yearPublication");
         Matcher yearMatcher = YEAR_PATTERN.matcher(parameter);
         if (parameter != null && yearMatcher.matches()) {
             card.setYearPublication(Integer.parseInt(parameter));
         } else {
-            throw new IncorrectFormDataException("yearPublication", parameter);
+            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.yearPublication"), parameter);
         }
         return card;
     }

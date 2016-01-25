@@ -31,11 +31,7 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
         request.setUser(user);
 
         request.setDateRequest(resultSet.getTimestamp("DateRequest"));
-        if (resultSet.getInt("IsReadingRoom") == 1) {
-            request.setIsReadingRoom(true);
-        } else {
-            request.setIsReadingRoom(false);
-        }
+        request.setIsReadingRoom(resultSet.getInt("IsReadingRoom") == 1);
         return request;
     }
 

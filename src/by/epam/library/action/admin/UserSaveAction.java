@@ -33,7 +33,8 @@ public class UserSaveAction extends AdministratorAction {
             forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.userSaved"));
             logger.info(String.format("User \"%s\" saved user with identity %d", getAuthorizedUser().getLogin(), user.getIdentity()));
         } catch (IncorrectFormDataException e) {
-            forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.incorrectData"));
+            forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.incorrectParameter")+" "+e.getMessage());
+            // MessageManager.getInstance(request).getProperty("message.incorrectData")
             logger.warn(String.format("Incorrect data was found when user \"%s\" tried to save user", getAuthorizedUser().getLogin()), e);
         }
         return forward;

@@ -27,8 +27,8 @@ user.name=Имя
 user.patronymic=Отчество
 user.subscription=Абонемент
 user.address=Адрес
-user.phoneHome=Телефон дом.
-user.phoneMobile=Телефон моб.
+user.phoneHome=Телефон домашний
+user.phoneMobile=Телефон мобильный
 user.email=Адрес электронной почты
 user.roleName=Роль
 user.login=Логин
@@ -189,5 +189,25 @@ message.bookReturned=Книга успешно принята
 message.book=Книга
 message.successfullyIssued=успешно выдана
 message.userSaved=Данные пользователя успешно сохранены
+message.incorrectParameter=Обнаружен пустой или некорректный параметр
+
+validator.identity=Уникальный код
+validator.inventoryNumber=Инвентарный номер
+validator.identityCard=Код карточки
+validator.author=Автор
+validator.titleBook=Название
+validator.isbn=Isbn
+validator.yearPublication=Год публикации
+validator.surname=Фамилия
+validator.name=Имя
+validator.patronymic=Отчество
+validator.subscription=Читательский билет
+validator.address=Адрес
+validator.phoneHome=Телефон домашний
+validator.phoneMobile=Телефон мобильный
+validator.email=Адрес электронной почты
+validator.login=Логин
+validator.password=Пароль
+validator.role=Роль
 
 
