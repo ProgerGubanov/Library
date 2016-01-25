@@ -1,1 +1,0 @@
-native2ascii -encoding utf-8 messages_ru.utf-8 messages_ru.properties
