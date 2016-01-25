@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - library@localhost" uuid="f12203ce-c056-48cf-b501-2f05e684ccfd">
+    <database-info product="MySQL" version="5.7.9-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="library"/>
+    <table name="book" schema="" catalog="library" type="TABLE">
+      <column name="IdBook" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="0YPQvdC40LrQsNC70YzQvdGL0Lkg0LrQvtC0INC60L3QuNCz0Lg=" autoIncrement="true"/>
+      <column name="InventoryNumber" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12" remarks="0LjQvdCy0LXQvdGC0LDRgNC90YvQuSDQvdC+0LzQtdGA"/>
+      <column name="IdBookStatus" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" remarks="0LrQvtC0INGB0YLQsNGC0YPRgdCwINC60L3QuNCz0LggKNCy0YvQtNCw0L3QsCDQvdCwINCw0LHQvtC90LXQvNC10L3Rgiwg0LIg0YfQuNGC0LDQu9GM0L3QvtC8INC30LDQu9C1LCDQsiDQsdC40LHQu9C40L7RgtC10LrQtSk="/>
+      <column name="IdCard" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="IdBook"/>
+      <foreign-key name="FkIdBookStatus" columns="IdBookStatus" ref-table="bookstatus" ref-schema="" ref-catalog="library" ref-columns="IdBookStatus" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FkIdCard" columns="IdCard" ref-table="card" ref-schema="" ref-catalog="library" ref-columns="IdCard" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FkIdBook" table="order" schema="" catalog="library" columns="IdBook"/>
+      <index name="FkIdBookStatusIdx" unique="false" columns="IdBookStatus"/>
+      <index name="FkIdCardIdx" unique="false" columns="IdCard"/>
+    </table>
+    <table name="bookstatus" schema="" catalog="library" type="TABLE">
+      <column name="IdBookStatus" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" remarks="0YPQvdC40LrQsNC70YzQvdGL0Lkg0LrQvtC0INC30LDQv9C40YHQuA==" autoIncrement="true"/>
+      <column name="BookStatusName" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" remarks="0L3QsNC40LzQtdC90L7QstCw0L3QuNC1INGB0YLQsNGC0YPRgdCw"/>
+      <primary-key name="PRIMARY" columns="IdBookStatus"/>
+      <exported-key name="FkIdBookStatus" table="book" schema="" catalog="library" columns="IdBookStatus"/>
+    </table>
+    <table name="card" schema="" catalog="library" type="TABLE">
+      <column name="IdCard" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="0YPQvdC40LrQsNC70YzQvdGL0Lkg0LrQvtC0INC60L3QuNCz0Lg=" autoIncrement="true"/>
+      <column name="Author" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" remarks="0LDQstGC0L7RgCjRiyk="/>
+      <column name="Title" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" remarks="0L3QsNC30LLQsNC90LjQtQ=="/>
+      <column name="Isbn" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12" remarks="0LzQtdC20LTRg9C90LDRgNC+0LTQvdGL0Lkg0YHRgtCw0L3QtNCw0YDRgtC90YvQuSDQutC90LjQttC90YvQuSDQvdC+0LzQtdGA"/>
+      <column name="YearPublication" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="0LTQsNGC0LAg0L/Rg9Cx0LvQuNC60LDRhtC40Lg="/>
+      <primary-key name="PRIMARY" columns="IdCard"/>
+      <exported-key name="FkIdCard" table="book" schema="" catalog="library" columns="IdCard"/>
+      <exported-key name="FkIdCardR" table="request" schema="" catalog="library" columns="IdCard"/>
+      <index name="AuthorIdx" unique="false" columns="Author"/>
+      <index name="TitleIdx" unique="false" columns="Title"/>
+    </table>
+    <table name="order" schema="" catalog="library" type="TABLE">
+      <column name="IdOrder" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="0YPQvdC40LrQsNC70YzQvdGL0Lkg0LrQvtC0" autoIncrement="true"/>
+      <column name="IdBook" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="0LrQvtC0INC60L3QuNCz0Lg="/>
+      <column name="IdUser" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="0LrQvtC0INGH0LjRgtCw0YLQtdC70Y8="/>
+      <column name="IdLibrarian" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="0LrQvtC0INCx0LjQsdC70LjQvtGC0LXQutCw0YDRjw=="/>
+      <column name="DatePlannedReturn" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91" remarks="0L/Qu9Cw0L3QuNGA0YPQtdC80LDRjyDQtNCw0YLQsCDQstC+0LfQstGA0LDRgtCwINC60L3QuNCz0Lg="/>
+      <column name="DateActualReturn" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="0YDQtdCw0LvRjNC90LDRjyDQtNCw0YLQsCDQstC+0LfQstGA0LDRgtCwINC60L3QuNCz0Lg="/>
+      <column name="DateIssue" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="0LTQsNGC0LAg0LLRi9C00LDRh9C4INC60L3QuNCz0Lg="/>
+      <column name="IsReadingRoom" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="0L/RgNC40LfQvdCw0Log0LfQsNC60LDQt9CwINC60L3QuNCz0Lgg0LIg0YfQuNGC0LDQu9GM0L3Ri9C5INC30LDQuw=="/>
+      <primary-key name="PRIMARY" columns="IdOrder"/>
+      <foreign-key name="FkIdBook" columns="IdBook" ref-table="book" ref-schema="" ref-catalog="library" ref-columns="IdBook" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FkIdLibrarian" columns="IdLibrarian" ref-table="user" ref-schema="" ref-catalog="library" ref-columns="IdUser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FkIdUser" columns="IdUser" ref-table="user" ref-schema="" ref-catalog="library" ref-columns="IdUser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FkIdBookIdx" unique="false" columns="IdBook"/>
+      <index name="FkIdLibrarianIdx" unique="false" columns="IdLibrarian"/>
+      <index name="FkIdUserIdx" unique="false" columns="IdUser"/>
+    </table>
+    <table name="request" schema="" catalog="library" type="TABLE">
+      <column name="IdRequest" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="0YPQvdC40LrQsNC70YzQvdGL0Lkg0LrQvtC0" autoIncrement="true"/>
+      <column name="IdCard" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="0LrQvtC0INC60L3QuNCz0Lg="/>
+      <column name="IdUser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="0LrQvtC0INGH0LjRgtCw0YLQtdC70Y8="/>
+      <column name="DateRequest" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" remarks="0LTQsNGC0LAg0L7RhNC+0YDQvNC70LXQvdC40Y8g0LfQsNC60LDQt9Cw"/>
+      <column name="IsReadingRoom" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" remarks="0L/RgNC40LfQvdCw0Log0LfQsNC60LDQt9CwINC60L3QuNCz0Lgg0LIg0YfQuNGC0LDQu9GM0L3Ri9C5INC30LDQuw=="/>
+      <primary-key name="PRIMARY" columns="IdRequest"/>
+      <foreign-key name="FkIdCardR" columns="IdCard" ref-table="card" ref-schema="" ref-catalog="library" ref-columns="IdCard" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FkIdUserR" columns="IdUser" ref-table="user" ref-schema="" ref-catalog="library" ref-columns="IdUser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FkIdCardIdx" unique="false" columns="IdCard"/>
+      <index name="FkIdUserRIdx" unique="false" columns="IdUser"/>
+    </table>
+    <table name="user" schema="" catalog="library" type="TABLE">
+      <column name="IdUser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="0LrQvtC0INGH0LjRgtCw0YLQtdC70Y8=" autoIncrement="true"/>
+      <column name="Surname" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12" remarks="0YTQsNC80LjQu9C40Y8="/>
+      <column name="Name" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12" remarks="0LjQvNGP"/>
+      <column name="Patronymic" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12" remarks="0L7RgtGH0LXRgdGC0LLQvg=="/>
+      <column name="Subscription" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="0L3QvtC80LXRgCDQsNCx0L7QvdC10LzQtdC90YLQsA=="/>
+      <column name="Address" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="0LDQtNGA0LXRgQ=="/>
+      <column name="PhoneHome" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="0YLQtdC70LXRhNC+0L0g0LTQvtC80LDRiNC90LjQuQ=="/>
+      <column name="PhoneMobile" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="0YLQtdC70LXRhNC+0L0g0LzQvtCx0LjQu9GM0L3Ri9C5"/>
+      <column name="Email" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12" remarks="ZS1tYWls"/>
+      <column name="IdUserRole" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" remarks="0YHRgtCw0YLRg9GBINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjw=="/>
+      <column name="Login" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" remarks="0JvQvtCz0LjQvQ=="/>
+      <column name="Password" sqlType="CHAR" precision="32" scale="0" nullable="false" jdbcType="1" remarks="TUQ1INGF0Y3RiCDQv9Cw0YDQvtC70Y8="/>
+      <primary-key name="PRIMARY" columns="IdUser"/>
+      <foreign-key name="FkIdUserRole" columns="IdUserRole" ref-table="userrole" ref-schema="" ref-catalog="library" ref-columns="IdUserRole" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FkIdLibrarian" table="order" schema="" catalog="library" columns="IdLibrarian"/>
+      <exported-key name="FkIdUser" table="order" schema="" catalog="library" columns="IdUser"/>
+      <exported-key name="FkIdUserR" table="request" schema="" catalog="library" columns="IdUser"/>
+      <index name="FkIdUserRoleIdx" unique="false" columns="IdUserRole"/>
+    </table>
+    <table name="userrole" schema="" catalog="library" type="TABLE">
+      <column name="IdUserRole" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" remarks="0YPQvdC40LrQsNC70YzQvdGL0Lkg0LrQvtC0" autoIncrement="true"/>
+      <column name="RoleName" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" remarks="0YDQvtC70Ywg0L/QvtC70YzQt9C+0LLQsNGC0LXQu9GP"/>
+      <primary-key name="PRIMARY" columns="IdUserRole"/>
+      <exported-key name="FkIdUserRole" table="user" schema="" catalog="library" columns="IdUserRole"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8" collation="utf8_general_ci">library</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="book" view="standard">
+<left>310</left>
+<top>25</top>
+<width>245</width>
+<height>141</height>
+<sql_create_table>CREATE TABLE `book` (
+  `IdBook` int(11) NOT NULL AUTO_INCREMENT COMMENT 'уникальный код книги',
+  `InventoryNumber` varchar(25) NOT NULL COMMENT 'инвентарный номер',
+  `IdBookStatus` tinyint(1) NOT NULL COMMENT 'код статуса книги (выдана на абонемент, в читальном зале, в библиотеке)',
+  `IdCard` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdBook`),
+  KEY `FkIdBookStatusIdx` (`IdBookStatus`),
+  KEY `FkIdCardIdx` (`IdCard`),
+  CONSTRAINT `FkIdBookStatus` FOREIGN KEY (`IdBookStatus`) REFERENCES `bookstatus` (`IdBookStatus`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FkIdCard` FOREIGN KEY (`IdCard`) REFERENCES `card` (`IdCard`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='книги'</sql_create_table>
+</table>
+<table name="bookstatus" view="standard">
+<left>36</left>
+<top>57</top>
+<width>242</width>
+<height>107</height>
+<sql_create_table>CREATE TABLE `bookstatus` (
+  `IdBookStatus` tinyint(1) NOT NULL AUTO_INCREMENT COMMENT 'уникальный код записи',
+  `BookStatusName` varchar(50) NOT NULL COMMENT 'наименование статуса',
+  PRIMARY KEY (`IdBookStatus`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='статус книги'</sql_create_table>
+</table>
+<table name="card" view="standard">
+<left>35</left>
+<top>197</top>
+<width>238</width>
+<height>158</height>
+<sql_create_table>CREATE TABLE `card` (
+  `IdCard` int(11) NOT NULL AUTO_INCREMENT COMMENT 'уникальный код книги',
+  `Author` varchar(100) NOT NULL COMMENT 'автор(ы)',
+  `Title` varchar(100) NOT NULL COMMENT 'название',
+  `Isbn` varchar(25) DEFAULT NULL COMMENT 'международный стандартный книжный номер',
+  `YearPublication` int(4) DEFAULT NULL COMMENT 'дата публикации',
+  PRIMARY KEY (`IdCard`),
+  KEY `TitleIdx` (`Title`),
+  KEY `AuthorIdx` (`Author`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='книги'</sql_create_table>
+</table>
+<table name="order" view="standard">
+<left>590</left>
+<top>31</top>
+<width>238</width>
+<height>209</height>
+<sql_create_table>CREATE TABLE `order` (
+  `IdOrder` int(11) NOT NULL AUTO_INCREMENT COMMENT 'уникальный код',
+  `IdBook` int(11) DEFAULT NULL COMMENT 'код книги',
+  `IdUser` int(11) DEFAULT NULL COMMENT 'код читателя',
+  `IdLibrarian` int(11) DEFAULT NULL COMMENT 'код библиотекаря',
+  `DatePlannedReturn` date DEFAULT NULL COMMENT 'планируемая дата возврата книги',
+  `DateActualReturn` datetime DEFAULT NULL COMMENT 'реальная дата возврата книги',
+  `DateIssue` datetime DEFAULT NULL COMMENT 'дата выдачи книги',
+  `IsReadingRoom` tinyint(1) DEFAULT NULL COMMENT 'признак заказа книги в читальный зал',
+  PRIMARY KEY (`IdOrder`),
+  KEY `FkIdBookIdx` (`IdBook`),
+  KEY `FkIdUserIdx` (`IdUser`),
+  KEY `FkIdLibrarianIdx` (`IdLibrarian`),
+  CONSTRAINT `FkIdBook` FOREIGN KEY (`IdBook`) REFERENCES `book` (`IdBook`),
+  CONSTRAINT `FkIdLibrarian` FOREIGN KEY (`IdLibrarian`) REFERENCES `user` (`IdUser`),
+  CONSTRAINT `FkIdUser` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='заказы'</sql_create_table>
+</table>
+<table name="request" view="standard">
+<left>317</left>
+<top>257</top>
+<width>218</width>
+<height>158</height>
+<sql_create_table>CREATE TABLE `request` (
+  `IdRequest` int(11) NOT NULL AUTO_INCREMENT COMMENT 'уникальный код',
+  `IdCard` int(11) DEFAULT NULL COMMENT 'код книги',
+  `IdUser` int(11) NOT NULL COMMENT 'код читателя',
+  `DateRequest` datetime NOT NULL COMMENT 'дата оформления заказа',
+  `IsReadingRoom` tinyint(1) DEFAULT NULL COMMENT 'признак заказа книги в читальный зал',
+  PRIMARY KEY (`IdRequest`),
+  KEY `FkIdUserRIdx` (`IdUser`),
+  KEY `FkIdCardIdx` (`IdCard`),
+  CONSTRAINT `FkIdCardR` FOREIGN KEY (`IdCard`) REFERENCES `card` (`IdCard`),
+  CONSTRAINT `FkIdUserR` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='заявки'</sql_create_table>
+</table>
+<table name="user" view="standard">
+<left>897</left>
+<top>185</top>
+<width>222</width>
+<height>277</height>
+<sql_create_table>CREATE TABLE `user` (
+  `IdUser` int(11) NOT NULL AUTO_INCREMENT COMMENT 'код читателя',
+  `Surname` varchar(30) DEFAULT NULL COMMENT 'фамилия',
+  `Name` varchar(30) DEFAULT NULL COMMENT 'имя',
+  `Patronymic` varchar(30) DEFAULT NULL COMMENT 'отчество',
+  `Subscription` varchar(20) DEFAULT NULL COMMENT 'номер абонемента',
+  `Address` varchar(100) DEFAULT NULL COMMENT 'адрес',
+  `PhoneHome` varchar(20) DEFAULT NULL COMMENT 'телефон домашний',
+  `PhoneMobile` varchar(20) DEFAULT NULL COMMENT 'телефон мобильный',
+  `Email` varchar(50) DEFAULT NULL COMMENT 'e-mail',
+  `IdUserRole` tinyint(1) NOT NULL COMMENT 'статус пользователя',
+  `Login` varchar(50) NOT NULL COMMENT 'Логин',
+  `Password` char(32) NOT NULL COMMENT 'MD5 хэш пароля',
+  PRIMARY KEY (`IdUser`),
+  KEY `FkIdUserRoleIdx` (`IdUserRole`),
+  CONSTRAINT `FkIdUserRole` FOREIGN KEY (`IdUserRole`) REFERENCES `userrole` (`IdUserRole`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='пользователи'</sql_create_table>
+</table>
+<table name="userrole" view="standard">
+<left>615</left>
+<top>355</top>
+<width>207</width>
+<height>107</height>
+<sql_create_table>CREATE TABLE `userrole` (
+  `IdUserRole` tinyint(1) NOT NULL AUTO_INCREMENT COMMENT 'уникальный код',
+  `RoleName` varchar(50) NOT NULL COMMENT 'роль пользователя',
+  PRIMARY KEY (`IdUserRole`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='роли пользователей'</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

@@ -1,0 +1,832 @@
+
+2015-12-17 16:38:36,919
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:36,986
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:36,999
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:37,000
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:37,001
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:37,001
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:37,003
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:37,003
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:37,004
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:37,005
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:37,006
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:37,007
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:37,007
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:37,008
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:37,011
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:37,012
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:37,016
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:37,017
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:37,018
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:38:37,018
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:38:37,020
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,255
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,291
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,311
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,312
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,313
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,314
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,326
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,327
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,328
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,328
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,330
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,330
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,348
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,350
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,352
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,352
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,357
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,358
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,359
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,359
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:39:47,362
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:39:47,363
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 0 used connections; 5 free connection
+
+2015-12-17 16:41:32,190
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,215
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,218
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,230
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,233
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,236
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,237
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,239
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,241
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,247
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:41:32,247
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 0 used connections; 5 free connection
+
+2015-12-17 16:42:21,914
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,918
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,920
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,921
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,925
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,926
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,927
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,928
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,930
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,933
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:42:21,934
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 0 used connections; 5 free connection
+
+2015-12-17 16:43:19,289
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-17 16:43:19,308
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:43:19,315
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:43:19,317
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:43:19,318
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:43:19,319
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:43:19,321
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:43:19,322
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:43:19,323
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:43:19,325
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-17 16:43:19,326
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:32,411
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,257
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,410
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,410
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,413
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,414
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,416
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,416
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,419
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,419
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,421
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,422
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,423
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,425
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,426
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,427
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,431
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,431
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,432
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,432
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:01:33,434
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:01:33,435
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 0 used connections; 5 free connection
+
+2015-12-18 09:02:32,139
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,169
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,175
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,179
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,181
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,181
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,182
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,184
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,185
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,185
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,190
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,190
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,193
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,194
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,195
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,195
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,204
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,204
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,206
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,207
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:02:32,208
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:02:32,210
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 0 used connections; 5 free connection
+
+2015-12-18 09:03:40,914
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,935
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,949
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,949
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,951
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,951
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,953
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,953
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,954
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,955
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,957
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,958
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,959
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,963
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,964
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,964
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,970
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,970
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,972
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,973
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:03:40,974
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:03:40,975
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 0 used connections; 5 free connection
+
+2015-12-18 09:18:18,509
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,528
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,533
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,534
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,535
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,535
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,537
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,538
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,539
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,540
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,541
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,542
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,543
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,546
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,547
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,548
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,555
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,556
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,557
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,558
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2015-12-18 09:18:18,560
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2015-12-18 09:18:18,560
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 0 used connections; 5 free connection
+
+2016-01-05 10:09:51,489
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,618
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,648
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,650
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,663
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,665
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,676
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,677
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,687
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,689
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,692
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,694
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,698
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,700
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,709
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,718
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,770
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,774
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,782
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,785
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 10:09:51,799
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 10:09:51,806
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 0 used connections; 5 free connection
+
+2016-01-05 18:04:04,706
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,111
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,132
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,134
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,151
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,153
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,165
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,167
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,178
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,180
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,184
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,186
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,192
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,194
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,210
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,211
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,221
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,223
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,227
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,229
+DEBUG	by.epam.library.dao.pool.ConnectionPool.getConnection:59
+Connection was received from pool. Current pool size: 2 used connections; 3 free connection
+
+2016-01-05 18:04:05,235
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 1 used connections; 4 free connection
+
+2016-01-05 18:04:05,237
+DEBUG	by.epam.library.dao.pool.ConnectionPool.freeConnection:70
+Connection was returned into pool. Current pool size: 0 used connections; 5 free connection
