@@ -16,7 +16,7 @@ import by.epam.library.exception.PersistentException;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
-final public class ConnectionPool {
+public final class ConnectionPool {
     private static Logger logger = Logger.getLogger(ConnectionPool.class);
 
     private String url;

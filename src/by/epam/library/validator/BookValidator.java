@@ -16,7 +16,16 @@ public class BookValidator implements Validator<Book> {
     @Override
     public Book validate(HttpServletRequest request) throws IncorrectFormDataException {
         Book book = new Book();
-        String parameter = request.getParameter("identity");
+        setIdentityIfValid(request, book);
+        setInventoryNumberIfValid(request, book);
+        setIdentityCardNumberIfValid(request, book);
+        setIdBookStatusNumberIfValid(request, book);
+        return book;
+    }
+
+    private void setIdentityIfValid(HttpServletRequest request, Book book) throws IncorrectFormDataException {
+        String parameter;
+        parameter = request.getParameter("identity");
         if (parameter != null) {
             try {
                 book.setIdentity(Integer.parseInt(parameter));
@@ -24,12 +33,20 @@ public class BookValidator implements Validator<Book> {
                 throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.identity"), parameter);
             }
         }
+    }
+
+    private void setInventoryNumberIfValid(HttpServletRequest request, Book book) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("inventoryNumber");
         if (parameter != null && !parameter.isEmpty()) {
             book.setInventoryNumber(parameter);
         } else {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.inventoryNumber"), parameter);
         }
+    }
+
+    private void setIdentityCardNumberIfValid(HttpServletRequest request, Book book) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("identityCard");
         if (parameter != null) {
             Card card = new Card();
@@ -38,13 +55,15 @@ public class BookValidator implements Validator<Book> {
         } else {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.identityCard"), parameter);
         }
+    }
+
+    private void setIdBookStatusNumberIfValid(HttpServletRequest request, Book book) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("idBookStatus");
         if (parameter != null) {
             book.setBookStatus(BookStatus.getByIdentity(Integer.parseInt(parameter)));
         } else {
             book.setBookStatus(BookStatus.INLIBRARY);
         }
-        return book;
     }
-
 }

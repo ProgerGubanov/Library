@@ -16,8 +16,7 @@ public class CardServiceImpl extends ServiceImpl implements CardService {
     @Override
     public List<Card> findByAuthor(String author) throws PersistentException {
         CardDao cardDao = factory.createDao(CardDao.class);
-        List<Card> cards = cardDao.readByAuthor(author);
-        return cards;
+        return cardDao.readByAuthor(author);
     }
 
     @Override

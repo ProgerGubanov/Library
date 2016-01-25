@@ -53,12 +53,18 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -83,12 +89,18 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -109,8 +121,11 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
             throw new PersistentException(e);
         } finally {
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -128,8 +143,11 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
             throw new PersistentException(e);
         } finally {
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -154,12 +172,18 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -183,12 +207,18 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -215,12 +245,18 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -244,12 +280,18 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }

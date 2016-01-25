@@ -31,7 +31,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
         user.setPhoneHome(resultSet.getString("PhoneHome"));
         user.setPhoneMobile(resultSet.getString("PhoneMobile"));
         user.setEmail(resultSet.getString("Email"));
-        user.setRole(Role.getByIdentity(resultSet.getInt("IdUserRole")-1));
+        user.setRole(Role.getByIdentity(resultSet.getInt("IdUserRole") - 1));
         user.setLogin(resultSet.getString("Login"));
         user.setPassword(resultSet.getString("Password"));
         return user;
@@ -54,7 +54,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             statement.setString(6, user.getPhoneHome());
             statement.setString(7, user.getPhoneMobile());
             statement.setString(8, user.getEmail());
-            statement.setInt(9, user.getRole().getIdentity()+1);
+            statement.setInt(9, user.getRole().getIdentity() + 1);
             statement.setString(10, user.getLogin());
             statement.setString(11, user.getPassword());
             statement.executeUpdate();
@@ -69,12 +69,18 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -100,12 +106,18 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -127,7 +139,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             statement.setString(6, user.getPhoneHome());
             statement.setString(7, user.getPhoneMobile());
             statement.setString(8, user.getEmail());
-            statement.setInt(9, user.getRole().getIdentity()+1);
+            statement.setInt(9, user.getRole().getIdentity() + 1);
             statement.setString(10, user.getLogin());
             statement.setString(11, user.getPassword());
             statement.setInt(12, user.getIdentity());
@@ -136,8 +148,11 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             throw new PersistentException(e);
         } finally {
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -155,8 +170,11 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             throw new PersistentException(e);
         } finally {
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -183,12 +201,18 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -198,7 +222,6 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
         final String SQL_SELECT_ALL_USERS = "SELECT `IdUser`, `Surname`, `Name`, `Patronymic`, `Subscription`, `Address`, `PhoneHome`, " +
                 "`PhoneMobile`, `Email`, `IdUserRole`, `Login`, `Password` " +
                 "FROM `library`.`User` " +
-                //"WHERE (`IdUserRole` > 1) " +
                 "ORDER BY `IdUserRole`, `Surname`";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -216,12 +239,18 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -252,12 +281,18 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -288,12 +323,18 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             throw new PersistentException(e);
         } finally {
             try {
-                resultSet.close();
-            } catch (SQLException | NullPointerException e) {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
             try {
-                statement.close();
-            } catch (SQLException | NullPointerException e) {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }

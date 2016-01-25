@@ -25,7 +25,24 @@ public class UserValidator implements Validator<User> {
     @Override
     public User validate(HttpServletRequest request) throws IncorrectFormDataException {
         User user = new User();
-        String parameter = request.getParameter("identity");
+        setIdentityIfValid(request, user);
+        setSurnameIfValid(request, user);
+        setNameIfValid(request, user);
+        setPatronymicIfValid(request, user);
+        setSubscriptionIfValid(request, user);
+        setAddressIfValid(request, user);
+        setPhoneHomeIfValid(request, user);
+        setPhoneMobileIfValid(request, user);
+        setEmailIfValid(request, user);
+        setLoginIfValid(request, user);
+        setPasswordIfValid(request, user);
+        setRoleIfValid(request, user);
+        return user;
+    }
+
+    private void setIdentityIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
+        parameter = request.getParameter("identity");
         if (parameter != null) {
             try {
                 user.setIdentity(Integer.parseInt(parameter));
@@ -33,75 +50,132 @@ public class UserValidator implements Validator<User> {
                 throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.identity"), parameter);
             }
         }
+    }
+
+    private void setSurnameIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("surname");
         if (parameter != null && !parameter.isEmpty()) {
             user.setSurname(parameter);
         } else {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.surname"), parameter);
         }
+    }
+
+    private void setNameIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("name");
         if (parameter != null && !parameter.isEmpty()) {
             user.setName(parameter);
         } else {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.name"), parameter);
         }
+    }
+
+    private void setPatronymicIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("patronymic");
         if (parameter != null && !parameter.isEmpty()) {
             user.setPatronymic(parameter);
         } else {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.patronymic"), parameter);
         }
+    }
+
+
+    private void setSubscriptionIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("subscription");
         if (parameter != null) {
             user.setSubscription(parameter);
         } else {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.subscription"), parameter);
         }
+    }
+
+    private void setAddressIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("address");
         if (parameter != null) {
             user.setAddress(parameter);
         } else {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.address"), parameter);
         }
+    }
+
+    private void setPhoneHomeIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("phoneHome");
-        Matcher phoneMatcher = PHONE_PATTERN.matcher(parameter);
-        if (parameter != null && (phoneMatcher.matches() || parameter.isEmpty())) {
-            user.setPhoneHome(parameter);
+        if (parameter != null) {
+            Matcher phoneMatcher = PHONE_PATTERN.matcher(parameter);
+            if (phoneMatcher.matches() || parameter.isEmpty()) {
+                user.setPhoneHome(parameter);
+            } else {
+                throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.phoneHome"), parameter);
+            }
         } else {
-            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.phoneHome"), parameter);
+            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.phoneHome"), null);
         }
+    }
+
+    private void setPhoneMobileIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("phoneMobile");
-        Matcher mobilePhoneMatcher = MOBILE_PHONE_PATTERN.matcher(parameter);
-        if (parameter != null && (mobilePhoneMatcher.matches() || parameter.isEmpty())) {
-            user.setPhoneMobile(parameter);
+        if (parameter != null) {
+            Matcher mobilePhoneMatcher = MOBILE_PHONE_PATTERN.matcher(parameter);
+            if (mobilePhoneMatcher.matches() || parameter.isEmpty()) {
+                user.setPhoneMobile(parameter);
+            } else {
+                throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.phoneMobile"), parameter);
+            }
         } else {
-            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.phoneMobile"), parameter);
+            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.phoneMobile"), null);
         }
+    }
+
+    private void setEmailIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("email");
-        Matcher emailMatcher = EMAIL_PATTERN.matcher(parameter);
-        if (parameter != null && (emailMatcher.matches() || parameter.isEmpty())) {
-            user.setEmail(parameter);
+        if (parameter != null) {
+            Matcher emailMatcher = EMAIL_PATTERN.matcher(parameter);
+            if (emailMatcher.matches() || parameter.isEmpty()) {
+                user.setEmail(parameter);
+            } else {
+                throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.email"), parameter);
+            }
         } else {
-            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.email"), parameter);
+            throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.email"), null);
         }
+    }
+
+    private void setLoginIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("login");
         if (parameter != null && !parameter.isEmpty()) {
             user.setLogin(parameter);
         } else {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.login"), parameter);
         }
+    }
+
+    private void setPasswordIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("password");
         if (parameter != null) {
             user.setPassword(parameter);
         } else {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.password"), parameter);
         }
+    }
+
+    private void setRoleIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
+        String parameter;
         parameter = request.getParameter("role");
         try {
             user.setRole(Role.getByIdentity(Integer.parseInt(parameter)));
         } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.role"), parameter);
         }
-        return user;
     }
+
 }
