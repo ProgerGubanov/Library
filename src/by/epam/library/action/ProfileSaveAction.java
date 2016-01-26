@@ -22,15 +22,21 @@ public class ProfileSaveAction extends AuthorizedUserAction {
         Forward forward = new Forward("/profile/edit.html");
         String oldPassword = request.getParameter("old-password");
         String newPassword = request.getParameter("new-password");
+        String confirmPassword = request.getParameter("confirmPassword");
         User authorizedUser = getAuthorizedUser();
         if (oldPassword != null && newPassword != null) {
             UserService service = factory.getService(UserService.class);
             User user = service.findByLoginAndPassword(authorizedUser.getLogin(), oldPassword);
             if (user != null) {
-                user.setPassword(newPassword);
-                service.save(user);
-                forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.passwordChanged"));
-                logger.info(String.format("User \"%s\" changed password", authorizedUser.getLogin()));
+                if (newPassword.equals(confirmPassword)) {
+                    user.setPassword(newPassword);
+                    service.save(user);
+                    forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.passwordChanged"));
+                    logger.info(String.format("User \"%s\" changed password", authorizedUser.getLogin()));
+                } else {
+                    forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.newPasswordNotMatch"));
+                    logger.info(String.format("User \"%s\" tried to change password and specified the incorrect new password", authorizedUser.getLogin()));
+                }
             } else {
                 forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.oldPasswordIsNotRecognized"));
                 logger.info(String.format("User \"%s\" tried to change password and specified the incorrect previous password", authorizedUser.getLogin()));

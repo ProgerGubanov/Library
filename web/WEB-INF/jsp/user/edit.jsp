@@ -52,7 +52,7 @@
     </div>
     <div id="page">
         <h2>${title}</h2>
-        <c:if test="${not empty message}"><H3>${message}</H3></c:if>
+        <c:if test="${not empty message}"><h3>${message}</h3></c:if>
         <c:url value="/user/save.html" var="userSaveUrl"/>
         <form action="${userSaveUrl}" method="post">
             <c:if test="${not empty user}">

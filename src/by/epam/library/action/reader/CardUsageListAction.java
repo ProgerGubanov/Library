@@ -25,10 +25,10 @@ public class CardUsageListAction extends ReaderAction {
         }
         try {
             Integer identity;
-            if (request.getParameterMap().get("identity") != null) {
+            if ((request.getParameterMap().get("identity") != null)) {
                 identity = Integer.parseInt(request.getParameter("identity"));
             } else {
-                identity = (Integer) request.getAttribute("readerIdentity");
+                identity = (Integer) request.getAttribute("identity");
             }
             if (identity != null) {
                 forward.getAttributes().put("identity", identity);

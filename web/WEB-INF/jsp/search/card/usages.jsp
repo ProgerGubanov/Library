@@ -33,7 +33,7 @@
     </div>
     <div id="page">
         <h2><fmt:message key="h2"/></h2>
-        <c:if test="${not empty message}"><H3>${message}</H3></c:if>
+        <c:if test="${not empty message}"><h3>${message}</h3></c:if>
         <table>
             <tr>
                 <th><fmt:message key="author"/></th>
@@ -54,7 +54,7 @@
         </table>
 
         <c:choose>
-            <c:when test="${authorizedUser.role.identity == 1}">
+            <c:when test="${authorizedUser.role.identity == 1 && readerIdentity == null}">
                 <c:url value="/search/card/edit.html" var="cardSaveUrl"/>
                 <form action="${cardSaveUrl}" method="post">
                     <input type="hidden" name="identity" value="${card.identity}">
@@ -81,8 +81,9 @@
             </c:when>
         </c:choose>
         <c:choose>
-            <c:when test="${authorizedUser.role.identity == 1}">
+            <c:when test="${authorizedUser.role.identity == 1 && readerIdentity == null}">
                 <hr>
+                <h2><fmt:message key="addInstanceHeader"/></h2>
                 <c:url value="/librarian/booksave.html" var="bookSaveUrl"/>
                 <form style="display: inline-block" action="${bookSaveUrl}" method="post">
                     <label for="inventoryNumber"><fmt:message key="inventoryNumber"/></label>

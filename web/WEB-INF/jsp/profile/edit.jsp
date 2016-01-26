@@ -46,6 +46,8 @@
             <input type="password" id="old-password" name="old-password" required>
             <label for="new-password"><fmt:message key="newPassword"/><span class="required"> *</span></label>
             <input type="password" id="new-password" name="new-password" required>
+            <label for="confirmPassword"><fmt:message key="confirmPassword"/><span class="required"> *</span></label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
             <button type="submit"><fmt:message key="changePassword"/></button>
             <button type="reset"><fmt:message key="reset"/></button>
         </form>
