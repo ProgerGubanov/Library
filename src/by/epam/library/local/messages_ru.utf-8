@@ -1,6 +1,11 @@
 ﻿# Locale ru_RU
 language=RU
 
+h1_1=Библиотека
+h1_2=«Мир знаний»
+exit=выход
+title=Библиотека
+
 menu.readers=читатели
 menu.requests=заявки
 menu.books=книги
@@ -9,7 +14,7 @@ menu.bookSearch=поиск книг
 menu.myRequests=мои заявки
 menu.myBooks=мои книги
 
-login.title=Библиотека - Вход в систему
+login.title=Вход в систему
 login.h1_1=Библиотека
 login.h1_2=«Мир знаний»
 login.h2=Вход в систему
@@ -17,10 +22,7 @@ login.username=Имя пользователя
 login.password=Пароль
 login.button=Войти
 
-user.title=Библиотека - пользователи
-user.h1_1=Библиотека
-user.h1_2="Мир знаний"
-user.exit=выход
+user.title=Пользователи
 user.h2=Список пользователей
 user.surname=Фамилия
 user.name=Имя
@@ -44,33 +46,21 @@ user.open=Открыть
 user.notFound=По запросу ничего не найдено
 user.home=На главную
 
-error.title=Библиотека - Ошибка
-error.h1_1=Библиотека
-error.h1_2="Мир знаний"
-error.exit=выход
+error.title=Ошибка
 error.h2_1=Запрошенная страница
 error.h2_2=не найдена на сервере
 error.h2_3=Непредвиденная ошибка приложения
 error.home=На главную
 
-search.title=Библиотека - Поиск читателей
-search.h1_1=Библиотека
-search.h1_2="Мир знаний"
-search.exit=выход
+search.title=Поиск читателей
 search.h2=Поиск читателей
 search.find=Найти
 search.findBySubscription=Поиск по номеру читательского билета
 search.findBySurname=Поиск по фамилии
 
-card.title=Библиотека - Книга
-card.title2=Библиотека - Результат поиска книг
-card.title3=Библиотека - Поиск книг
-card.h1_1=Библиотека
-card.h1_2="Мир знаний"
-card.exit=выход
-card.h2=Книга
-card.h2_2=Результат поиска книг
-card.h2_3=Поиск книг
+card.title=Книга
+card.titleResults=Результат поиска книг
+card.titleSearch=Поиск книг
 card.author=Автор
 card.titleCard=Название
 card.isbn=Isbn
@@ -97,10 +87,7 @@ card.newBook=Новая книга
 card.reset=Сбросить
 card.save=Сохранить
 
-request.title=Библиотека - Список заявок
-request.h1_1=Библиотека
-request.h1_2="Мир знаний"
-request.exit=выход
+request.title=Список заявок
 request.h2=Список заявок
 request.author=Автор
 request.titleCard=Название
@@ -114,10 +101,7 @@ request.delete=Удалить
 request.notFound=По запросу ничего не найдено
 request.home=На главную
 
-order.title=Библиотека - Список заказов
-order.h1_1=Библиотека
-order.h1_2="Мир знаний"
-order.exit=выход
+order.title=Список заказов
 order.h2=Список книг
 order.author=Автор
 order.titleCard=Название
@@ -131,10 +115,7 @@ order.subscription=Абонемент
 order.notFound=По запросу ничего не найдено
 order.home=На главную
 
-profile.title=Библиотека - Профиль пользователя
-profile.h1_1=Библиотека
-profile.h1_2=«Мир знаний»
-profile.exit=выход
+profile.title=Профиль пользователя
 profile.h2=Профиль пользователя
 profile.userName=Имя пользователя
 profile.role=Роль
@@ -144,10 +125,7 @@ profile.confirmPassword=Подтвердите новый пароль
 profile.changePassword=Сменить пароль
 profile.reset=Сбросить
 
-usages.title=Библиотека - Читатель
-usages.h1_1=Библиотека
-usages.h1_2=«Мир знаний»
-usages.exit=выход
+usages.title=Читатель
 usages.h2=Читатель
 usages.surname=Фамилия
 usages.name=Имя
@@ -213,5 +191,3 @@ validator.email=Адрес электронной почты
 validator.login=Логин
 validator.password=Пароль
 validator.role=Роль
-
-
