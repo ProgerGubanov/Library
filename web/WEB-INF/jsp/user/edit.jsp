@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
@@ -10,7 +10,6 @@
 </c:if>
 
 <fmt:bundle basename="by/epam/library/local/messages" prefix="user.">
-
     <c:choose>
         <c:when test="${not empty user}">
             <c:set var="roleIdentity" value="${user.role.identity}"/>
@@ -30,86 +29,86 @@
         </c:otherwise>
     </c:choose>
 
-    <HTML>
-    <HEAD>
-        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <TITLE><fmt:message key="h1_1"/> - ${title}</TITLE>
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><fmt:message key="h1_1"/> - ${title}</title>
         <c:url value="/main.css" var="cssUrl"/>
-        <LINK rel="stylesheet" type="text/css" href="${cssUrl}">
-    </HEAD>
-    <BODY>
-    <DIV id="header">
-        <H1><fmt:message key="h1_1"/><BR><fmt:message key="h1_2"/></H1>
-        <UL class="right">
+        <link rel="stylesheet" type="text/css" href="${cssUrl}">
+    </head>
+    <body>
+    <div id="header">
+        <h1><fmt:message key="h1_1"/><br><fmt:message key="h1_2"/></h1>
+        <ul class="right">
             <c:forEach items="${menu}" var="item">
                 <c:url value="${item.url}" var="itemUrl"/>
-                <LI class="item"><A href="${itemUrl}">${item.name}</A></LI>
+                <li class="item"><a href="${itemUrl}">${item.name}</a></li>
             </c:forEach>
             <c:url value="/profile/edit.html" var="profileEditUrl"/>
-            <LI class="item"><A href="${profileEditUrl}">${authorizedUser.login}</A></LI>
+            <li class="item"><a href="${profileEditUrl}">${authorizedUser.login}</a></li>
             <c:url value="/logout.html" var="logoutUrl"/>
-            <LI class="item"><A href="${logoutUrl}"><fmt:message key="exit"/></A></LI>
-        </UL>
-    </DIV>
-    <DIV id="page">
-        <H2>${title}</H2>
+            <li class="item"><a href="${logoutUrl}"><fmt:message key="exit"/></a></li>
+        </ul>
+    </div>
+    <div id="page">
+        <h2>${title}</h2>
         <c:if test="${not empty message}"><H3>${message}</H3></c:if>
         <c:url value="/user/save.html" var="userSaveUrl"/>
-        <FORM action="${userSaveUrl}" method="post">
+        <form action="${userSaveUrl}" method="post">
             <c:if test="${not empty user}">
-                <INPUT type="hidden" name="identity" value="${user.identity}">
+                <input type="hidden" name="identity" value="${user.identity}">
             </c:if>
-            <LABEL for="surname"><fmt:message key="surname"/><span class="required"> *</span></LABEL>
-            <INPUT type="text" id="surname" name="surname" value="${surname}" required>
-            <LABEL for="name"><fmt:message key="name"/><span class="required"> *</span></LABEL>
-            <INPUT type="text" id="name" name="name" value="${name}" required>
-            <LABEL for="patronymic"><fmt:message key="patronymic"/><span class="required"> *</span></LABEL>
-            <INPUT type="text" id="patronymic" name="patronymic" value="${patronymic}" required>
-            <LABEL for="subscription"><fmt:message key="subscription"/></LABEL>
-            <INPUT type="text" id="subscription" name="subscription" value="${subscription}">
-            <LABEL for="address"><fmt:message key="address"/></LABEL>
-            <INPUT type="text" id="address" name="address" value="${address}">
-            <LABEL for="phoneHome"><fmt:message key="phoneHome"/></LABEL>
-            <INPUT type="text" id="phoneHome" name="phoneHome" value="${phoneHome}">
-            <LABEL for="phoneMobile"><fmt:message key="phoneMobile"/></LABEL>
-            <INPUT type="text" id="phoneMobile" name="phoneMobile" value="${phoneMobile}">
-            <LABEL for="email"><fmt:message key="email"/></LABEL>
-            <INPUT type="text" id="email" name="email" value="${email}">
-            <LABEL for="login"><fmt:message key="login"/><span class="required"> *</span></LABEL>
-            <INPUT type="text" id="login" name="login" value="${login}" required>
+            <label for="surname"><fmt:message key="surname"/><span class="required"> *</span></label>
+            <input type="text" id="surname" name="surname" value="${surname}" required>
+            <label for="name"><fmt:message key="name"/><span class="required"> *</span></label>
+            <input type="text" id="name" name="name" value="${name}" required>
+            <label for="patronymic"><fmt:message key="patronymic"/><span class="required"> *</span></label>
+            <input type="text" id="patronymic" name="patronymic" value="${patronymic}" required>
+            <label for="subscription"><fmt:message key="subscription"/></label>
+            <input type="text" id="subscription" name="subscription" value="${subscription}">
+            <label for="address"><fmt:message key="address"/></label>
+            <input type="text" id="address" name="address" value="${address}">
+            <label for="phoneHome"><fmt:message key="phoneHome"/></label>
+            <input type="text" id="phoneHome" name="phoneHome" value="${phoneHome}">
+            <label for="phoneMobile"><fmt:message key="phoneMobile"/></label>
+            <input type="text" id="phoneMobile" name="phoneMobile" value="${phoneMobile}">
+            <label for="email"><fmt:message key="email"/></label>
+            <input type="text" id="email" name="email" value="${email}">
+            <label for="login"><fmt:message key="login"/><span class="required"> *</span></label>
+            <input type="text" id="login" name="login" value="${login}" required>
 
             <c:choose>
                 <c:when test="${not empty user}">
-                    <LABEL for="password"><fmt:message key="password"/></LABEL>
-                    <INPUT type="text" id="password" name="password" value="${password}">
+                    <label for="password"><fmt:message key="password"/></label>
+                    <input type="text" id="password" name="password" value="${password}">
                 </c:when>
                 <c:otherwise>
-                    <LABEL for="password"><fmt:message key="password"/><span class="required"> *</span></LABEL>
-                    <INPUT type="text" id="password" name="password" value="${password}" required>
+                    <label for="password"><fmt:message key="password"/><span class="required"> *</span></label>
+                    <input type="text" id="password" name="password" value="${password}" required>
                 </c:otherwise>
             </c:choose>
 
-            <LABEL for="role"><fmt:message key="roleName"/><span class="required"> *</span></LABEL>
-            <SELECT id="role" name="role">
+            <label for="role"><fmt:message key="roleName"/><span class="required"> *</span></label>
+            <select id="role" name="role">
                 <c:forEach items="${roles}" var="role">
                     <c:remove var="selected"/>
                     <c:if test="${not empty roleIdentity and roleIdentity eq role.identity}">
                         <c:set var="selected" value="selected"/>
                     </c:if>
-                    <OPTION value="${role.identity}" ${selected}>${role.name}</OPTION>
+                    <option value="${role.identity}" ${selected}>${role.name}</option>
                 </c:forEach>
-            </SELECT>
-            <BUTTON type="submit"><fmt:message key="save"/></BUTTON>
-            <BUTTON type="reset"><fmt:message key="clear"/></BUTTON>
-        </FORM>
+            </select>
+            <button type="submit"><fmt:message key="save"/></button>
+            <button type="reset"><fmt:message key="clear"/></button>
+        </form>
         <c:if test="${not empty user}">
             <c:url value="/user/delete.html" var="userDeleteUrl"/>
-            <FORM action="${userDeleteUrl}" method="post">
-                <INPUT type="hidden" name="identity" value="${user.identity}">
-                <BUTTON type="submit" ${isUserUsages ? 'disabled' : ''}><fmt:message key="delete"/></BUTTON>
-            </FORM>
+            <form action="${userDeleteUrl}" method="post">
+                <input type="hidden" name="identity" value="${user.identity}">
+                <button type="submit" ${isUserUsages ? 'disabled' : ''}><fmt:message key="delete"/></button>
+            </form>
         </c:if>
-    </DIV>
-    </BODY>
-    </HTML>
+    </div>
+    </body>
+    </html>
 </fmt:bundle>

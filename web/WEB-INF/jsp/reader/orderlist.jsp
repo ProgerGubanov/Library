@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
@@ -11,51 +11,51 @@
 </c:if>
 
 <fmt:bundle basename="by/epam/library/local/messages" prefix="order.">
-    <HTML>
-    <HEAD>
-        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <TITLE><fmt:message key="title"/></TITLE>
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><fmt:message key="title"/></title>
         <c:url value="/main.css" var="cssUrl"/>
-        <LINK rel="stylesheet" type="text/css" href="${cssUrl}">
-    </HEAD>
-    <BODY>
-    <DIV id="header">
-        <H1><fmt:message key="h1_1"/><BR><fmt:message key="h1_2"/></H1>
-        <UL class="right">
+        <link rel="stylesheet" type="text/css" href="${cssUrl}">
+    </head>
+    <body>
+    <div id="header">
+        <h1><fmt:message key="h1_1"/><br><fmt:message key="h1_2"/></h1>
+        <ul class="right">
             <c:forEach items="${menu}" var="item">
                 <c:url value="${item.url}" var="itemUrl"/>
-                <LI class="item"><A href="${itemUrl}">${item.name}</A></LI>
+                <li class="item"><a href="${itemUrl}">${item.name}</a></li>
             </c:forEach>
             <c:url value="/profile/edit.html" var="profileEditUrl"/>
-            <LI class="item"><A href="${profileEditUrl}">${authorizedUser.login}</A></LI>
+            <li class="item"><a href="${profileEditUrl}">${authorizedUser.login}</a></li>
             <c:url value="/logout.html" var="logoutUrl"/>
-            <LI class="item"><A href="${logoutUrl}"><fmt:message key="exit"/></A></LI>
-        </UL>
-    </DIV>
-    <DIV id="page">
-        <H2><fmt:message key="h2"/></H2>
-        <c:if test="${not empty message}"><H3>${message}</H3></c:if>
+            <li class="item"><a href="${logoutUrl}"><fmt:message key="exit"/></a></li>
+        </ul>
+    </div>
+    <div id="page">
+        <h2><fmt:message key="h2"/></h2>
+        <c:if test="${not empty message}"><h3>${message}</h3></c:if>
         <c:choose>
             <c:when test="${not empty orders}">
-                <TABLE>
-                    <TR>
-                        <TH><fmt:message key="author"/></TH>
-                        <TH><fmt:message key="titleCard"/></TH>
-                        <TH><fmt:message key="inventoryNumber"/></TH>
-                        <TH><fmt:message key="issued"/></TH>
-                        <TH><fmt:message key="returnTo"/></TH>
-                        <TH><fmt:message key="returned"/></TH>
-                        <TH><fmt:message key="location"/></TH>
-                    </TR>
+                <table>
+                    <tr>
+                        <th><fmt:message key="author"/></th>
+                        <th><fmt:message key="titleCard"/></th>
+                        <th><fmt:message key="inventoryNumber"/></th>
+                        <th><fmt:message key="issued"/></th>
+                        <th><fmt:message key="returnTo"/></th>
+                        <th><fmt:message key="returned"/></th>
+                        <th><fmt:message key="location"/></th>
+                    </tr>
                     <c:forEach items="${orders}" var="orders">
-                    <TR style="background: ${(orders.dateActualReturn == null) && (orders.datePlannedReturn < date) ? '#ECC' : ''}">
-                        <TD>${orders.book.card.author}</TD>
-                        <TD>${orders.book.card.title}</TD>
-                        <TD>${orders.book.inventoryNumber}</TD>
-                        <TD><fmt:formatDate value="${orders.dateIssue}" pattern="dd.MM.yyyy"/></TD>
-                        <TD><fmt:formatDate value="${orders.datePlannedReturn}" pattern="dd.MM.yyyy"/></TD>
-                        <TD><fmt:formatDate value="${orders.dateActualReturn}" pattern="dd.MM.yyyy"/></TD>
-                        <TD>
+                    <tr style="background: ${(orders.dateActualReturn == null) && (orders.datePlannedReturn < date) ? '#ECC' : ''}">
+                        <td>${orders.book.card.author}</td>
+                        <td>${orders.book.card.title}</td>
+                        <td>${orders.book.inventoryNumber}</td>
+                        <td><fmt:formatDate value="${orders.dateIssue}" pattern="dd.MM.yyyy"/></td>
+                        <td><fmt:formatDate value="${orders.datePlannedReturn}" pattern="dd.MM.yyyy"/></td>
+                        <td><fmt:formatDate value="${orders.dateActualReturn}" pattern="dd.MM.yyyy"/></td>
+                        <td>
                             <c:choose>
                                 <c:when test="${requests.isReadingRoom() == true}">
                                     <fmt:message key="readingRoom"/>
@@ -64,19 +64,19 @@
                                     <fmt:message key="subscription"/>
                                 </c:otherwise>
                             </c:choose>
-                        </TD>
+                        </td>
                         </c:forEach>
-                    </TR>
-                </TABLE>
+                    </tr>
+                </table>
             </c:when>
             <c:otherwise>
-                <P><fmt:message key="notFound"/></P>
+                <p><fmt:message key="notFound"/></p>
             </c:otherwise>
         </c:choose>
-        <BR>
+        <br>
         <c:url value="/index.html" var="mainUrl"/>
-        <A href="${mainUrl}"><fmt:message key="home"/></A>
-    </DIV>
-    </BODY>
-    </HTML>
+        <a href="${mainUrl}"><fmt:message key="home"/></a>
+    </div>
+    </body>
+    </html>
 </fmt:bundle>

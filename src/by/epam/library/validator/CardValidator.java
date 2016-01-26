@@ -89,6 +89,4 @@ public class CardValidator implements Validator<Card> {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.yearPublication"), null);
         }
     }
-
-
 }

@@ -177,5 +177,4 @@ public class UserValidator implements Validator<User> {
             throw new IncorrectFormDataException(MessageManager.getInstance(request).getProperty("validator.role"), parameter);
         }
     }
-
 }

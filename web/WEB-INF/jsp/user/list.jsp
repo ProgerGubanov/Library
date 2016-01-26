@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -9,71 +9,70 @@
 </c:if>
 
 <fmt:bundle basename="by/epam/library/local/messages" prefix="user.">
-
-    <HTML>
-    <HEAD>
-        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <TITLE><fmt:message key="title"/></TITLE>
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><fmt:message key="title"/></title>
         <c:url value="/main.css" var="cssUrl"/>
-        <LINK rel="stylesheet" type="text/css" href="${cssUrl}">
-    </HEAD>
-    <BODY>
-    <DIV id="header">
-        <H1><fmt:message key="h1_1"/><BR><fmt:message key="h1_2"/></H1>
-        <UL class="right">
+        <link rel="stylesheet" type="text/css" href="${cssUrl}">
+    </head>
+    <body>
+    <div id="header">
+        <h1><fmt:message key="h1_1"/><br><fmt:message key="h1_2"/></h1>
+        <ul class="right">
             <c:forEach items="${menu}" var="item">
                 <c:url value="${item.url}" var="itemUrl"/>
-                <LI class="item"><A href="${itemUrl}">${item.name}</A></LI>
+                <li class="item"><a href="${itemUrl}">${item.name}</a></li>
             </c:forEach>
             <c:url value="/profile/edit.html" var="profileEditUrl"/>
-            <LI class="item"><A href="${profileEditUrl}">${authorizedUser.login}</A></LI>
+            <li class="item"><a href="${profileEditUrl}">${authorizedUser.login}</a></li>
             <c:url value="/logout.html" var="logoutUrl"/>
-            <LI class="item"><A href="${logoutUrl}"><fmt:message key="exit"/></A></LI>
-        </UL>
-    </DIV>
-    <DIV id="page">
-        <H2><fmt:message key="h2"/></H2>
-        <c:if test="${not empty message}"><H3>${message}</H3></c:if>
+            <li class="item"><a href="${logoutUrl}"><fmt:message key="exit"/></a></li>
+        </ul>
+    </div>
+    <div id="page">
+        <h2><fmt:message key="h2"/></h2>
+        <c:if test="${not empty message}"><h3>${message}</h3></c:if>
         <c:url value="/user/edit.html" var="userEditUrl"/>
-        <TABLE>
-            <TR>
-                <TH><fmt:message key="surname"/></TH>
-                <TH><fmt:message key="name"/></TH>
-                <TH><fmt:message key="patronymic"/></TH>
-                <TH><fmt:message key="subscription"/></TH>
-                <TH><fmt:message key="address"/></TH>
-                <TH><fmt:message key="phoneHome"/></TH>
-                <TH><fmt:message key="phoneMobile"/></TH>
-                <TH><fmt:message key="email"/></TH>
-                <TH><fmt:message key="roleName"/></TH>
-                <TH><fmt:message key="login"/></TH>
-                <TH>&nbsp;</TH>
-            </TR>
+        <table>
+            <tr>
+                <th><fmt:message key="surname"/></th>
+                <th><fmt:message key="name"/></th>
+                <th><fmt:message key="patronymic"/></th>
+                <th><fmt:message key="subscription"/></th>
+                <th><fmt:message key="address"/></th>
+                <th><fmt:message key="phoneHome"/></th>
+                <th><fmt:message key="phoneMobile"/></th>
+                <th><fmt:message key="email"/></th>
+                <th><fmt:message key="roleName"/></th>
+                <th><fmt:message key="login"/></th>
+                <th>&nbsp;</th>
+            </tr>
             <c:forEach items="${users}" var="user">
-                <TR>
-                    <TD>${user.surname}</TD>
-                    <TD>${user.name}</TD>
-                    <TD>${user.patronymic}</TD>
-                    <TD>${user.subscription}</TD>
-                    <TD>${user.address}</TD>
-                    <TD>${user.phoneHome}</TD>
-                    <TD>${user.phoneMobile}</TD>
-                    <TD>${user.email}</TD>
-                    <TD>${user.role.name}</TD>
-                    <TD>${user.login}</TD>
-                    <TD>
-                        <FORM action="${userEditUrl}" method="post">
-                            <INPUT type="hidden" name="identity" value="${user.identity}">
-                            <BUTTON type="submit" class="edit" title="<fmt:message key="edit"/>"></BUTTON>
-                        </FORM>
-                    </TD>
-                </TR>
+                <tr>
+                    <td>${user.surname}</td>
+                    <td>${user.name}</td>
+                    <td>${user.patronymic}</td>
+                    <td>${user.subscription}</td>
+                    <td>${user.address}</td>
+                    <td>${user.phoneHome}</td>
+                    <td>${user.phoneMobile}</td>
+                    <td>${user.email}</td>
+                    <td>${user.role.name}</td>
+                    <td>${user.login}</td>
+                    <td>
+                        <form action="${userEditUrl}" method="post">
+                            <input type="hidden" name="identity" value="${user.identity}">
+                            <button type="submit" class="edit" title="<fmt:message key="edit"/>"></button>
+                        </form>
+                    </td>
+                </tr>
             </c:forEach>
-        </TABLE>
-        <FORM action="${userEditUrl}" method="post">
-            <BUTTON type="submit"><fmt:message key="add"/></BUTTON>
-        </FORM>
-    </DIV>
-    </BODY>
-    </HTML>
+        </table>
+        <form action="${userEditUrl}" method="post">
+            <button type="submit"><fmt:message key="add"/></button>
+        </form>
+    </div>
+    </body>
+    </html>
 </fmt:bundle>

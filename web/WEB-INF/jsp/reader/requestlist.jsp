@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
@@ -11,59 +11,59 @@
 </c:if>
 
 <fmt:bundle basename="by/epam/library/local/messages" prefix="request.">
-    <HTML>
-    <HEAD>
-        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <TITLE><fmt:message key="title"/></TITLE>
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><fmt:message key="title"/></title>
         <c:url value="/main.css" var="cssUrl"/>
-        <LINK rel="stylesheet" type="text/css" href="${cssUrl}">
-    </HEAD>
-    <BODY>
-    <DIV id="header">
-        <H1><fmt:message key="h1_1"/><BR><fmt:message key="h1_2"/></H1>
-        <UL class="right">
+        <link rel="stylesheet" type="text/css" href="${cssUrl}">
+    </head>
+    <body>
+    <div id="header">
+        <h1><fmt:message key="h1_1"/><br><fmt:message key="h1_2"/></h1>
+        <ul class="right">
             <c:forEach items="${menu}" var="item">
                 <c:url value="${item.url}" var="itemUrl"/>
-                <LI class="item"><A href="${itemUrl}">${item.name}</A></LI>
+                <li class="item"><a href="${itemUrl}">${item.name}</a></li>
             </c:forEach>
             <c:url value="/profile/edit.html" var="profileEditUrl"/>
-            <LI class="item"><A href="${profileEditUrl}">${authorizedUser.login}</A></LI>
+            <li class="item"><a href="${profileEditUrl}">${authorizedUser.login}</a></li>
             <c:url value="/logout.html" var="logoutUrl"/>
-            <LI class="item"><A href="${logoutUrl}"><fmt:message key="exit"/></A></LI>
-        </UL>
-    </DIV>
-    <DIV id="page">
-        <H2><fmt:message key="h2"/></H2>
-        <c:if test="${not empty message}"><H3>${message}</H3></c:if>
+            <li class="item"><a href="${logoutUrl}"><fmt:message key="exit"/></a></li>
+        </ul>
+    </div>
+    <div id="page">
+        <h2><fmt:message key="h2"/></h2>
+        <c:if test="${not empty message}"><h3>${message}</h3></c:if>
         <c:url value="/reader/requestdelete.html" var="requestDeleteUrl"/>
         <c:choose>
             <c:when test="${not empty requests}">
-                <TABLE>
-                    <TR>
-                        <TH><fmt:message key="author"/></TH>
-                        <TH><fmt:message key="titleCard"/></TH>
+                <table>
+                    <tr>
+                        <th><fmt:message key="author"/></th>
+                        <th><fmt:message key="titleCard"/></th>
                         <c:choose>
                             <c:when test="${authorizedUser.role.identity == 1}">
-                                <TH><fmt:message key="reader"/></TH>
+                                <th><fmt:message key="reader"/></th>
                             </c:when>
                         </c:choose>
-                        <TH><fmt:message key="yearPublication"/></TH>
-                        <TH><fmt:message key="dateRequest"/></TH>
-                        <TH><fmt:message key="location"/></TH>
-                        <TH>&nbsp;</TH>
-                    </TR>
+                        <th><fmt:message key="yearPublication"/></th>
+                        <th><fmt:message key="dateRequest"/></th>
+                        <th><fmt:message key="location"/></th>
+                        <th>&nbsp;</th>
+                    </tr>
                     <c:forEach items="${requests}" var="requests">
-                        <TR>
-                            <TD>${requests.card.author}</TD>
-                            <TD>${requests.card.title}</TD>
+                        <tr>
+                            <td>${requests.card.author}</td>
+                            <td>${requests.card.title}</td>
                             <c:choose>
                                 <c:when test="${authorizedUser.role.identity == 1}">
-                                    <TD>${requests.user.surname}&nbsp;${fn:substring(requests.user.name, 0, 1)}.&nbsp;${fn:substring(requests.user.patronymic, 0, 1)}.</TD>
+                                    <td>${requests.user.surname}&nbsp;${fn:substring(requests.user.name, 0, 1)}.&nbsp;${fn:substring(requests.user.patronymic, 0, 1)}.</td>
                                 </c:when>
                             </c:choose>
-                            <TD>${requests.card.yearPublication}</TD>
-                            <TD><fmt:formatDate value="${requests.dateRequest}" pattern="dd.MM.yyyy HH:mm:ss"/></TD>
-                            <TD>
+                            <td>${requests.card.yearPublication}</td>
+                            <td><fmt:formatDate value="${requests.dateRequest}" pattern="dd.MM.yyyy HH:mm:ss"/></td>
+                            <td>
                                 <c:choose>
                                     <c:when test="${requests.isReadingRoom() == true}">
                                         <fmt:message key="readingRoom"/>
@@ -72,25 +72,25 @@
                                         <fmt:message key="subscription"/>
                                     </c:otherwise>
                                 </c:choose>
-                            </TD>
-                            <TD>
-                                <FORM action="${requestDeleteUrl}" method="post">
-                                    <INPUT type="hidden" name="identity" value="${requests.identity}">
-                                    <BUTTON type="submit"><fmt:message key="delete"/></BUTTON>
-                                </FORM>
-                            </TD>
-                        </TR>
+                            </td>
+                            <td>
+                                <form action="${requestDeleteUrl}" method="post">
+                                    <input type="hidden" name="identity" value="${requests.identity}">
+                                    <button type="submit"><fmt:message key="delete"/></button>
+                                </form>
+                            </td>
+                        </tr>
                     </c:forEach>
-                </TABLE>
+                </table>
             </c:when>
             <c:otherwise>
-                <P><fmt:message key="notFound"/></P>
+                <p><fmt:message key="notFound"/></p>
             </c:otherwise>
         </c:choose>
-        <BR>
+        <br>
         <c:url value="/index.html" var="mainUrl"/>
-        <A href="${mainUrl}"><fmt:message key="home"/></A>
-    </DIV>
-    </BODY>
-    </HTML>
+        <a href="${mainUrl}"><fmt:message key="home"/></a>
+    </div>
+    </body>
+    </html>
 </fmt:bundle>
