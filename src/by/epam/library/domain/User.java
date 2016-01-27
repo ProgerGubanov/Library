@@ -104,4 +104,41 @@ public class User extends Entity {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (!surname.equals(user.surname)) return false;
+        if (!name.equals(user.name)) return false;
+        if (!patronymic.equals(user.patronymic)) return false;
+        if (subscription != null ? !subscription.equals(user.subscription) : user.subscription != null) return false;
+        if (address != null ? !address.equals(user.address) : user.address != null) return false;
+        if (phoneHome != null ? !phoneHome.equals(user.phoneHome) : user.phoneHome != null) return false;
+        if (phoneMobile != null ? !phoneMobile.equals(user.phoneMobile) : user.phoneMobile != null) return false;
+        if (email != null ? !email.equals(user.email) : user.email != null) return false;
+        if (role != user.role) return false;
+        if (!login.equals(user.login)) return false;
+        return password.equals(user.password);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = surname.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + patronymic.hashCode();
+        result = 31 * result + (subscription != null ? subscription.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (phoneHome != null ? phoneHome.hashCode() : 0);
+        result = 31 * result + (phoneMobile != null ? phoneMobile.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + role.hashCode();
+        result = 31 * result + login.hashCode();
+        result = 31 * result + password.hashCode();
+        return result;
+    }
 }

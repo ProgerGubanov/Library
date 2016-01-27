@@ -43,4 +43,27 @@ public class Request extends Entity {
     public void setIsReadingRoom(boolean isReadingRoom) {
         this.isReadingRoom = isReadingRoom;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Request request = (Request) o;
+
+        if (isReadingRoom != request.isReadingRoom) return false;
+        if (!card.equals(request.card)) return false;
+        if (!user.equals(request.user)) return false;
+        return dateRequest.equals(request.dateRequest);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = card.hashCode();
+        result = 31 * result + user.hashCode();
+        result = 31 * result + dateRequest.hashCode();
+        result = 31 * result + (isReadingRoom ? 1 : 0);
+        return result;
+    }
 }

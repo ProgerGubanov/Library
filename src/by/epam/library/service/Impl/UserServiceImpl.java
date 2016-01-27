@@ -1,4 +1,4 @@
-package by.epam.library.service;
+package by.epam.library.service.Impl;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -8,6 +8,7 @@ import java.util.List;
 import by.epam.library.dao.UserDao;
 import by.epam.library.domain.User;
 import by.epam.library.exception.PersistentException;
+import by.epam.library.service.UserService;
 
 /**
  * Created by Gubanov Andrey on 22.01.2016.

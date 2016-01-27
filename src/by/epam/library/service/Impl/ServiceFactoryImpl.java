@@ -1,8 +1,9 @@
-package by.epam.library.service;
+package by.epam.library.service.Impl;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import by.epam.library.service.*;
 import org.apache.log4j.Logger;
 
 import by.epam.library.dao.DaoFactory;

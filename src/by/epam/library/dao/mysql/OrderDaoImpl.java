@@ -79,14 +79,14 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -116,14 +116,14 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -157,7 +157,7 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -179,7 +179,7 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -209,14 +209,14 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -270,14 +270,14 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -318,14 +318,14 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }

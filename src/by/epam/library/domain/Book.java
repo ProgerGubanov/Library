@@ -32,4 +32,27 @@ public class Book extends Entity {
     public void setCard(Card card) {
         this.card = card;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Book book = (Book) o;
+
+        if (!inventoryNumber.equals(book.inventoryNumber)) return false;
+        if (bookStatus != book.bookStatus) return false;
+        return card.equals(book.card);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + inventoryNumber.hashCode();
+        result = 31 * result + bookStatus.hashCode();
+        result = 31 * result + card.hashCode();
+        return result;
+    }
 }

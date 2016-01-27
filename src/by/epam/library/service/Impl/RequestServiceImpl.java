@@ -1,8 +1,9 @@
-package by.epam.library.service;
+package by.epam.library.service.Impl;
 
 import by.epam.library.dao.RequestDao;
 import by.epam.library.domain.Request;
 import by.epam.library.exception.PersistentException;
+import by.epam.library.service.RequestService;
 
 import java.util.List;
 

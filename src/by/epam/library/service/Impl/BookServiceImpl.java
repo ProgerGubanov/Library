@@ -1,8 +1,9 @@
-package by.epam.library.service;
+package by.epam.library.service.Impl;
 
 import by.epam.library.dao.BookDao;
 import by.epam.library.domain.Book;
 import by.epam.library.exception.PersistentException;
+import by.epam.library.service.BookService;
 
 /**
  * Created by Gubanov Andrey on 18.01.2016.

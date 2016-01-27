@@ -2,30 +2,31 @@ package by.epam.library.listener;
 
 import org.apache.log4j.Logger;
 
-import javax.servlet.annotation.WebListener;
-import javax.servlet.http.HttpSessionAttributeListener;
-import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
+ * Created by Gubanov Andrey on 26.01.2016.
  */
 
-@WebListener
-public class SessionListenerImpl implements HttpSessionAttributeListener {
+public class SessionListenerImpl implements HttpSessionListener {
     private static Logger logger = Logger.getLogger(SessionListenerImpl.class);
 
-    public void attributeRemoved(HttpSessionBindingEvent ev) {
-        logger.info("Listener remove: " + ev.getClass().getSimpleName() + " : " + ev.getName()
-                + " : " + ev.getValue());
+    private static int totalActiveSessions;
+
+    public static int getTotalActiveSession(){
+        return totalActiveSessions;
     }
 
-    public void attributeAdded(HttpSessionBindingEvent ev) {
-        logger.info("Listener add: " + ev.getClass().getSimpleName() + " : " + ev.getName()
-                + " : " + ev.getValue());
+    @Override
+    public void sessionCreated(HttpSessionEvent event) {
+        totalActiveSessions++;
+        logger.info("Session created. Total active session: " + getTotalActiveSession());
     }
 
-    public void attributeReplaced(HttpSessionBindingEvent ev) {
-        logger.info("Listener replace: " + ev.getClass().getSimpleName() + " : " + ev.getName()
-                + " : " + ev.getValue());
+    @Override
+    public void sessionDestroyed(HttpSessionEvent event) {
+        totalActiveSessions--;
+        logger.info("Session destroyed. Total active session: " + getTotalActiveSession());
     }
 }

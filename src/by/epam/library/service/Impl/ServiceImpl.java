@@ -1,6 +1,7 @@
-package by.epam.library.service;
+package by.epam.library.service.Impl;
 
 import by.epam.library.dao.DaoFactory;
+import by.epam.library.service.Service;
 
 /**
  * Created by Gubanov Andrey on 22.01.2016.

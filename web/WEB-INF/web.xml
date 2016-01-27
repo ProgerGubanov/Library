@@ -19,7 +19,7 @@
 
     <filter>
         <filter-name>EncodingFilter</filter-name>
-        <filter-class>by.epam.library.controller.EncodingFilter</filter-class>
+        <filter-class>by.epam.library.filters.EncodingFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -29,7 +29,7 @@
 
     <filter>
         <filter-name>ActionFromUriFilter</filter-name>
-        <filter-class>by.epam.library.controller.ActionFromUriFilter</filter-class>
+        <filter-class>by.epam.library.filters.ActionFromUriFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -39,7 +39,7 @@
 
     <filter>
         <filter-name>SecurityFilter</filter-name>
-        <filter-class>by.epam.library.controller.SecurityFilter</filter-class>
+        <filter-class>by.epam.library.filters.SecurityFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -47,6 +47,9 @@
         <url-pattern>*.html</url-pattern>
     </filter-mapping>
 
+    <listener>
+        <listener-class>by.epam.library.listener.SessionAttributeListenerImpl</listener-class>
+    </listener>
     <listener>
         <listener-class>by.epam.library.listener.SessionListenerImpl</listener-class>
     </listener>

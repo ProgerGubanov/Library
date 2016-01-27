@@ -1,4 +1,4 @@
-package by.epam.library.controller;
+package by.epam.library.filters;
 
 import java.io.IOException;
 import java.util.Map;

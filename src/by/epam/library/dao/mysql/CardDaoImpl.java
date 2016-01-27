@@ -54,14 +54,14 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -90,14 +90,14 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -123,7 +123,7 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -145,7 +145,7 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -178,14 +178,14 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -219,14 +219,14 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }
@@ -260,14 +260,14 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
     }

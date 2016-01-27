@@ -14,7 +14,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 
-import by.epam.library.service.ServiceFactoryImpl;
+import by.epam.library.service.Impl.ServiceFactoryImpl;
 import by.epam.library.action.Action;
 import by.epam.library.action.ActionManager;
 import by.epam.library.action.ActionManagerFactory;

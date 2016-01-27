@@ -70,4 +70,34 @@ public class Order extends Entity {
     public void setIsReadingRoom(boolean isReadingRoom) {
         this.isReadingRoom = isReadingRoom;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Order order = (Order) o;
+
+        if (isReadingRoom != order.isReadingRoom) return false;
+        if (!book.equals(order.book)) return false;
+        if (!user.equals(order.user)) return false;
+        if (!librarian.equals(order.librarian)) return false;
+        if (!datePlannedReturn.equals(order.datePlannedReturn)) return false;
+        if (dateActualReturn != null ? !dateActualReturn.equals(order.dateActualReturn) : order.dateActualReturn != null)
+            return false;
+        return dateIssue.equals(order.dateIssue);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = book.hashCode();
+        result = 31 * result + user.hashCode();
+        result = 31 * result + librarian.hashCode();
+        result = 31 * result + datePlannedReturn.hashCode();
+        result = 31 * result + (dateActualReturn != null ? dateActualReturn.hashCode() : 0);
+        result = 31 * result + dateIssue.hashCode();
+        result = 31 * result + (isReadingRoom ? 1 : 0);
+        return result;
+    }
 }

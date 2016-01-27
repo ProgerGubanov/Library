@@ -1,4 +1,4 @@
-package by.epam.library.service;
+package by.epam.library.service.Impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import by.epam.library.dao.CardDao;
 import by.epam.library.domain.Book;
 import by.epam.library.domain.Card;
 import by.epam.library.exception.PersistentException;
+import by.epam.library.service.CardService;
 
 /**
  * Created by Gubanov Andrey on 22.01.2016.
