@@ -13,9 +13,19 @@ import java.util.List;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Реализация DAO для класса Card - карточка книги
+ */
 public class CardDaoImpl extends BaseDaoImpl implements CardDao {
     private static Logger logger = Logger.getLogger(CardDaoImpl.class);
 
+    /**
+     * Извлечение информации из набора данных в объект card
+     *
+     * @param resultSet набор данных
+     * @return возвращаем объект card
+     * @throws SQLException
+     */
     public static Card getCardInfoFromResultSet(ResultSet resultSet) throws SQLException {
         Card card = new Card();
         card.setIdentity(resultSet.getInt("IdCard"));
@@ -26,6 +36,13 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
         return card;
     }
 
+    /**
+     * Добавление записи в таблицу Card
+     *
+     * @param card объект для сохранения в базе данных
+     * @return возвращаем автоинкрементное поле
+     * @throws PersistentException
+     */
     @Override
     public Integer create(Card card) throws PersistentException {
         final String SQL_INSERT_CARD = "INSERT INTO `library`.`Card` (`Author`, `Title`, `Isbn`, `YearPublication`) " +
@@ -54,18 +71,25 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение одной записи из таблицы Card
+     *
+     * @param identity уникальный код записи (IdCard)
+     * @return объект card
+     * @throws PersistentException
+     */
     @Override
     public Card read(Integer identity) throws PersistentException {
         final String SQL_SELECT_CARD = "SELECT `IdCard`, `Author`, `Title`, `Isbn`, `YearPublication` " +
@@ -90,18 +114,24 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Обновление записи в таблице Card
+     *
+     * @param card объект с новой информацией
+     * @throws PersistentException
+     */
     @Override
     public void update(Card card) throws PersistentException {
         final String SQL_UPDATE_CARD = "UPDATE `library`.`Card` SET `Author` = ?, `Title` = ?, `Isbn` = ?, `YearPublication` = ? " +
@@ -123,11 +153,17 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Удаление записи из таблицы Card
+     *
+     * @param identity уникальный код записи (IdCard)
+     * @throws PersistentException
+     */
     @Override
     public void delete(Integer identity) throws PersistentException {
         final String SQL_DELETE_CARD = "DELETE FROM `library`.`Card` " +
@@ -145,11 +181,18 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о карточках книг по автору
+     *
+     * @param author автор книги
+     * @return List<Card> список карточек
+     * @throws PersistentException
+     */
     @Override
     public List<Card> readByAuthor(String author) throws PersistentException {
         if (author == null) {
@@ -178,18 +221,25 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о карточках книг по названию
+     *
+     * @param title название книги
+     * @return List<Card> список карточек
+     * @throws PersistentException
+     */
     @Override
     public List<Card> readByTitle(String title) throws PersistentException {
         if (title == null) {
@@ -219,18 +269,25 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о карточках книг по номеру Isbn
+     *
+     * @param isbn номер Isbn книги
+     * @return List<Card> список карточек
+     * @throws PersistentException
+     */
     @Override
     public List<Card> readByIsbn(String isbn) throws PersistentException {
         if (isbn == null) {
@@ -260,14 +317,14 @@ public class CardDaoImpl extends BaseDaoImpl implements CardDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }

@@ -16,20 +16,37 @@ import by.epam.library.exception.PersistentException;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Реализация DAO для класса Book - книга
+ */
 public class BookDaoImpl extends BaseDaoImpl implements BookDao {
     private static Logger logger = Logger.getLogger(BookDaoImpl.class);
 
+    /**
+     * Извлечение информации из набора данных в объект book
+     *
+     * @param resultSet набор данных
+     * @return возвращаем объект book
+     * @throws SQLException
+     */
     public static Book getBookInfoFromResultSet(ResultSet resultSet) throws SQLException {
         Book book = new Book();
         book.setIdentity(resultSet.getInt("IdBook"));
         book.setInventoryNumber(resultSet.getString("InventoryNumber"));
-        book.setBookStatus(BookStatus.getByIdentity(resultSet.getInt("IdBookStatus")-1));
+        book.setBookStatus(BookStatus.getByIdentity(resultSet.getInt("IdBookStatus") - 1));
         Card card = new Card();
         card.setIdentity(resultSet.getInt("IdCard"));
         book.setCard(card);
         return book;
     }
 
+    /**
+     * Добавление записи в таблицу Book
+     *
+     * @param book объект для сохранения в базе данных
+     * @return возвращаем автоинкрементное поле
+     * @throws PersistentException
+     */
     @Override
     public Integer create(Book book) throws PersistentException {
         final String SQL_INSERT_BOOK = "INSERT INTO `library`.`Book` (`InventoryNumber`, `IdBookStatus`, `IdCard`) " +
@@ -39,7 +56,7 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
         try {
             statement = connection.prepareStatement(SQL_INSERT_BOOK, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, book.getInventoryNumber());
-            statement.setInt(2, book.getBookStatus().getIdentity()+1);
+            statement.setInt(2, book.getBookStatus().getIdentity() + 1);
             statement.setInt(3, book.getCard().getIdentity());
             statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
@@ -57,18 +74,25 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение одной записи из таблицы Book
+     *
+     * @param identity уникальный код записи (IdBook)
+     * @return объект book
+     * @throws PersistentException
+     */
     @Override
     public Book read(Integer identity) throws PersistentException {
         final String SQL_SELECT_BOOK = "SELECT `IdBook`, `InventoryNumber`, `IdBookStatus`, `IdCard` " +
@@ -93,18 +117,24 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Обновление записи в таблице Book
+     *
+     * @param book объект с новой информацией
+     * @throws PersistentException
+     */
     @Override
     public void update(Book book) throws PersistentException {
         final String SQL_UPDATE_BOOK = "UPDATE `library`.`Book` SET `InventoryNumber` = ?, `IdBookStatus` = ?, `IdCard` = ? " +
@@ -113,7 +143,7 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
         try {
             statement = connection.prepareStatement(SQL_UPDATE_BOOK);
             statement.setString(1, book.getInventoryNumber());
-            statement.setInt(2, book.getBookStatus().getIdentity()+1);
+            statement.setInt(2, book.getBookStatus().getIdentity() + 1);
             statement.setInt(3, book.getCard().getIdentity());
             statement.setInt(4, book.getIdentity());
             statement.executeUpdate();
@@ -125,11 +155,17 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Удаление записи из таблицы Book
+     *
+     * @param identity уникальный код записи (IdBook)
+     * @throws PersistentException
+     */
     @Override
     public void delete(Integer identity) throws PersistentException {
         final String SQL_DELETE_BOOK = "DELETE FROM `library`.`Book` " +
@@ -147,47 +183,17 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
-    @Override
-    public Book readByInventoryNumber(String inventoryNumber) throws PersistentException {
-        final String SQL_SELECT_BOOK_BY_INVENTORY_NUMBER = "SELECT `IdBook`, `IdBookStatus`, `IdCard` " +
-                "FROM `library`.`Book` " +
-                "WHERE (`InventoryNumber` LIKE \"%?%\")" ;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        try {
-            statement = connection.prepareStatement(SQL_SELECT_BOOK_BY_INVENTORY_NUMBER);
-            statement.setString(1, inventoryNumber);
-            resultSet = statement.executeQuery();
-            Book book = null;
-            if (resultSet.next()) {
-                book = getBookInfoFromResultSet(resultSet);
-            }
-            return book;
-        } catch (SQLException e) {
-            throw new PersistentException(e);
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-            } catch (SQLException e) {
-                logger.error(e.getMessage());
-            }
-            try {
-                if (statement != null) {
-                    statement.close();
-                }
-            } catch (SQLException e) {
-                logger.error(e.getMessage());
-            }
-        }
-    }
-
+    /**
+     * Чтение информации о всех книгах
+     *
+     * @return List<Book> список книг
+     * @throws PersistentException
+     */
     public List<Book> read() throws PersistentException {
         final String SQL_SELECT_BOOK_ALL = "SELECT `IdBook`, `InventoryNumber`, `IdBookStatus`, `IdCard` " +
                 "FROM `library`.`Book`";
@@ -211,18 +217,25 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о книгах по их карточке (все экземпляры одной книги)
+     *
+     * @param idCardInput код карточки
+     * @return List<Book> список книг
+     * @throws PersistentException
+     */
     public List<Book> readByIdCard(int idCardInput) throws PersistentException {
         final String SQL_SELECT_BOOK_BY_CARD = "SELECT `IdBook`, `InventoryNumber`, `IdBookStatus`, `IdCard` " +
                 "FROM `library`.`Book` " +
@@ -249,19 +262,26 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
-    public int countFreeBooks(int idCardInput) throws PersistentException{
+    /**
+     * Подсчет количества доступных экземпляров книги по коду карточки
+     *
+     * @param idCardInput код карточки
+     * @return countFreeBooks количество доступных книг
+     * @throws PersistentException
+     */
+    public int countFreeBooks(int idCardInput) throws PersistentException {
         final String SQL_SELECT_COUNT_FREE_BOOKS = "SELECT COUNT(*) AS `CountFreeBooks` " +
                 "FROM `library`.`Book` " +
                 "WHERE (`IdBookStatus` = 1) AND (`IdCard` = ?)";
@@ -284,16 +304,15 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
-
 }

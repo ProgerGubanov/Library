@@ -19,16 +19,32 @@ import by.epam.library.local.MessageManager;
  * Created by Gubanov Andrey on 10.01.2016.
  */
 
+/**
+ * Действие авторизации пользователя
+ */
 public class LoginAction extends Action {
     private static Logger logger = Logger.getLogger(LoginAction.class);
 
     private static Map<Role, List<MenuItem>> menu = new ConcurrentHashMap<>();
 
+    /**
+     * Получение списка ролей
+     *
+     * @return Set<Role> список ролей
+     */
     @Override
     public Set<Role> getAllowRoles() {
         return null;
     }
 
+    /**
+     * Заполнение меню авторизованного пользователя
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return Forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         String login = request.getParameter("login");

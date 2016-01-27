@@ -23,6 +23,9 @@ import java.util.concurrent.Executor;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Работа с коннектом в пуле
+ */
 public class PooledConnection implements Connection, Comparable<PooledConnection> {
     private Connection connection;
 

@@ -15,6 +15,9 @@ import by.epam.library.exception.PersistentException;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Фабрика DAO
+ */
 public class DaoFactoryImpl implements DaoFactory {
     private static Logger logger = Logger.getLogger(DaoFactoryImpl.class);
 
@@ -30,6 +33,11 @@ public class DaoFactoryImpl implements DaoFactory {
 
     private Connection connection;
 
+    /**
+     * Конструктор фабрики ДАО
+     *
+     * @throws PersistentException
+     */
     public DaoFactoryImpl() throws PersistentException {
         connection = ConnectionPool.getInstance().getConnection();
         try {
@@ -40,6 +48,14 @@ public class DaoFactoryImpl implements DaoFactory {
         }
     }
 
+    /**
+     * Создание ДАО
+     *
+     * @param key
+     * @param <Type>
+     * @return <Type extends Dao<?>> Type
+     * @throws PersistentException
+     */
     @SuppressWarnings("unchecked")
     @Override
     public <Type extends Dao<?>> Type createDao(Class<Type> key) throws PersistentException {
@@ -57,6 +73,9 @@ public class DaoFactoryImpl implements DaoFactory {
         return null;
     }
 
+    /**
+     * Закрытие соединения
+     */
     @Override
     public void close() {
         try {

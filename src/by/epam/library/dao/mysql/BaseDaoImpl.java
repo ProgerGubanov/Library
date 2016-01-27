@@ -6,10 +6,18 @@ import java.sql.Connection;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Абстрактный базовый класс DAO
+ */
 abstract public class BaseDaoImpl {
-	protected Connection connection;
+    protected Connection connection;
 
-	public void setConnection(Connection connection) {
-		this.connection = connection;
-	}
+    /**
+     * Установка соединения
+     *
+     * @param connection соединение
+     */
+    public void setConnection(Connection connection) {
+        this.connection = connection;
+    }
 }

@@ -13,8 +13,19 @@ import java.util.List;
  * Created by Gubanov Andrey on 07.01.2016.
  */
 
+/**
+ * Вывод результата поиска читателей
+ */
 public class SearchReaderResultAction extends LibrarianAction {
 
+    /**
+     * Вывод результата поиска читателей
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/search/reader/result.jsp", false);

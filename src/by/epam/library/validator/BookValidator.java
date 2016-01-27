@@ -12,7 +12,18 @@ import javax.servlet.http.HttpServletRequest;
  * Created by Gubanov Andrey on 20.01.2016.
  */
 
+/**
+ * Проверка корректонсти введенных данных книги
+ */
 public class BookValidator implements Validator<Book> {
+
+    /**
+     * Проверка введенной информации о книге
+     *
+     * @param request запрос
+     * @return Book информация о книге
+     * @throws IncorrectFormDataException
+     */
     @Override
     public Book validate(HttpServletRequest request) throws IncorrectFormDataException {
         Book book = new Book();
@@ -23,6 +34,13 @@ public class BookValidator implements Validator<Book> {
         return book;
     }
 
+    /**
+     * Установка кода книги, если значение корректно
+     *
+     * @param request запрос
+     * @param book    данные о книге
+     * @throws IncorrectFormDataException
+     */
     private void setIdentityIfValid(HttpServletRequest request, Book book) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("identity");
@@ -35,6 +53,13 @@ public class BookValidator implements Validator<Book> {
         }
     }
 
+    /**
+     * Установка инвентарного номера книги, если значение корректно
+     *
+     * @param request запрос
+     * @param book    данные о книге
+     * @throws IncorrectFormDataException
+     */
     private void setInventoryNumberIfValid(HttpServletRequest request, Book book) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("inventoryNumber");
@@ -45,6 +70,13 @@ public class BookValidator implements Validator<Book> {
         }
     }
 
+    /**
+     * Установка кода карточки книги, если значение корректно
+     *
+     * @param request запрос
+     * @param book    данные о книге
+     * @throws IncorrectFormDataException
+     */
     private void setIdentityCardNumberIfValid(HttpServletRequest request, Book book) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("identityCard");
@@ -57,6 +89,13 @@ public class BookValidator implements Validator<Book> {
         }
     }
 
+    /**
+     * Установка кода статуса местоположения книги, если значение корректно
+     *
+     * @param request запрос
+     * @param book    данные о книге
+     * @throws IncorrectFormDataException
+     */
     private void setIdBookStatusNumberIfValid(HttpServletRequest request, Book book) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("idBookStatus");

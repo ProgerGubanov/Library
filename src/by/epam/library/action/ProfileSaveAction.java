@@ -14,9 +14,20 @@ import by.epam.library.exception.PersistentException;
  * Created by Gubanov Andrey on 12.01.2016.
  */
 
+/**
+ * Действие изменения пароля в профиле
+ */
 public class ProfileSaveAction extends AuthorizedUserAction {
     private static Logger logger = Logger.getLogger(ProfileSaveAction.class);
 
+    /**
+     * Действие изменения пароля в профиле
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/profile/edit.html");

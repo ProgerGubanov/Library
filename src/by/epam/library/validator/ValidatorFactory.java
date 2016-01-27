@@ -10,6 +10,9 @@ import by.epam.library.domain.User;
  * Created by Gubanov Andrey on 22.01.2016.
  */
 
+/**
+ * Фабрика валидаторов
+ */
 public class ValidatorFactory {
     private static Map<Class<? extends Entity>, Class<? extends Validator<?>>> validators = new HashMap<>();
 
@@ -19,6 +22,12 @@ public class ValidatorFactory {
         validators.put(User.class, UserValidator.class);
     }
 
+    /**
+     * Создание валидатора
+     * @param entity сущность
+     * @param <Type>
+     * @return
+     */
     @SuppressWarnings("unchecked")
     public static <Type extends Entity> Validator<Type> createValidator(Class<Type> entity) {
         try {

@@ -17,7 +17,18 @@ import java.util.List;
  * Created by Gubanov Andrey on 05.01.2016.
  */
 
+/**
+ * Вывод информации о читателе
+ */
 public class LibrarianUserInfoAction extends LibrarianAction {
+    /**
+     * Вывод информации о читателе
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/librarian/usages.jsp", false);

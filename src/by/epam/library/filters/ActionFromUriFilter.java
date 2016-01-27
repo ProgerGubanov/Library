@@ -22,6 +22,9 @@ import org.apache.log4j.Logger;
  * Created by Gubanov Andrey on 12.01.2016.
  */
 
+/**
+ * Фильтр по Uri
+ */
 public class ActionFromUriFilter implements Filter {
     private static Logger logger = Logger.getLogger(ActionFromUriFilter.class);
 
@@ -63,10 +66,25 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/search/reader/result", SearchReaderResultAction.class);
     }
 
+    /**
+     * Bybwbfkbpfwbz
+     *
+     * @param filterConfig конфигурация
+     * @throws ServletException
+     */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
 
+    /**
+     * Выполнение фильтрации
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @param chain    цепочка
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         if (request instanceof HttpServletRequest) {
@@ -99,6 +117,9 @@ public class ActionFromUriFilter implements Filter {
         }
     }
 
+    /**
+     * Уничтожение
+     */
     @Override
     public void destroy() {
     }

@@ -14,8 +14,19 @@ import java.util.List;
  * Created by Gubanov Andrey on 08.01.2016.
  */
 
+/**
+ * Формирование заявки на книгу
+ */
 public class BookRequestListAction extends ReaderAction {
 
+    /**
+     * Формирование заявки на книгу
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         RequestService service = factory.getService(RequestService.class);

@@ -26,13 +26,31 @@ import by.epam.library.action.MainAction;
  * Created by Gubanov Andrey on 12.01.2016.
  */
 
+/**
+ * Фильтр безопасности
+ */
 public class SecurityFilter implements Filter {
     private static Logger logger = Logger.getLogger(SecurityFilter.class);
 
+    /**
+     * Инициализация
+     *
+     * @param filterConfig конфигурация
+     * @throws ServletException
+     */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
 
+    /**
+     * Фильтрация
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @param chain    цепочка
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         if (request instanceof HttpServletRequest && response instanceof HttpServletResponse) {
@@ -75,6 +93,9 @@ public class SecurityFilter implements Filter {
         }
     }
 
+    /**
+     * Уничтожение
+     */
     @Override
     public void destroy() {
     }

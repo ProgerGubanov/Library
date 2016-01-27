@@ -12,11 +12,21 @@ import java.util.regex.Matcher;
  * Created by Gubanov Andrey on 20.01.2016.
  */
 
+/**
+ * Проверка корректонсти введенных данных карточки
+ */
 public class CardValidator implements Validator<Card> {
-    public static final Pattern YEAR_PATTERN = Pattern.compile("^[1-9][0-9]{3}$");
-    public static final Pattern ISBN_PATTERN = Pattern.compile("^(?:ISBN(?:-1[03])?:? )?(?=[-0-9 ]{17}$|[-0-9X ]{13}$|" +
+    private static final Pattern YEAR_PATTERN = Pattern.compile("^[1-9][0-9]{3}$");
+    private static final Pattern ISBN_PATTERN = Pattern.compile("^(?:ISBN(?:-1[03])?:? )?(?=[-0-9 ]{17}$|[-0-9X ]{13}$|" +
             "[0-9X]{10}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?(?:[0-9]+[- ]?){2}[0-9X]$");
 
+    /**
+     * Проверка введенной информации о карточке
+     *
+     * @param request запрос
+     * @return Card информация о карточке книги
+     * @throws IncorrectFormDataException
+     */
     @Override
     public Card validate(HttpServletRequest request) throws IncorrectFormDataException {
         Card card = new Card();
@@ -28,6 +38,13 @@ public class CardValidator implements Validator<Card> {
         return card;
     }
 
+    /**
+     * Установка кода карточки книги, если значение корректно
+     *
+     * @param request запрос
+     * @param card    данные о карточке книги
+     * @throws IncorrectFormDataException
+     */
     private void setIdentityIfValid(HttpServletRequest request, Card card) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("identity");
@@ -40,6 +57,13 @@ public class CardValidator implements Validator<Card> {
         }
     }
 
+    /**
+     * Установка автора книги, если значение корректно
+     *
+     * @param request запрос
+     * @param card    данные о карточке книги
+     * @throws IncorrectFormDataException
+     */
     private void setAuthorIfValid(HttpServletRequest request, Card card) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("author");
@@ -50,6 +74,13 @@ public class CardValidator implements Validator<Card> {
         }
     }
 
+    /**
+     * Установка наименования книги, если значение корректно
+     *
+     * @param request запрос
+     * @param card    данные о карточке книги
+     * @throws IncorrectFormDataException
+     */
     private void setTitleBookIfValid(HttpServletRequest request, Card card) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("titlebook");
@@ -60,6 +91,13 @@ public class CardValidator implements Validator<Card> {
         }
     }
 
+    /**
+     * Установка Isbn книги, если значение корректно
+     *
+     * @param request запрос
+     * @param card    данные о карточке книги
+     * @throws IncorrectFormDataException
+     */
     private void setIsbnBookIfValid(HttpServletRequest request, Card card) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("isbn");
@@ -75,6 +113,13 @@ public class CardValidator implements Validator<Card> {
         }
     }
 
+    /**
+     * Установка года публикации книги, если значение корректно
+     *
+     * @param request запрос
+     * @param card    данные о карточке книги
+     * @throws IncorrectFormDataException
+     */
     private void setYearPublicationBookIfValid(HttpServletRequest request, Card card) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("yearPublication");

@@ -14,14 +14,24 @@ import java.util.regex.Pattern;
  * Created by Gubanov Andrey on 22.01.2016.
  */
 
+/**
+ * Проверка корректонсти введенных данных пользователя
+ */
 public class UserValidator implements Validator<User> {
-
-    public static final Pattern EMAIL_PATTERN = Pattern.compile
+    private static final Pattern EMAIL_PATTERN = Pattern.compile
             ("[a-zA-Z]{1}[a-zA-Z\\d\\u002E\\u005F]+@([a-zA-Z]+\\u002E){1,2}((net)|(com)|(org))");
-    public static final Pattern PHONE_PATTERN = Pattern.compile("^\\d[\\d\\(\\)\\ -]{4,14}\\d$");
-    public static final Pattern MOBILE_PHONE_PATTERN = Pattern.compile
+    private static final Pattern PHONE_PATTERN = Pattern.compile("^\\d[\\d\\(\\)\\ -]{4,14}\\d$");
+    private static final Pattern MOBILE_PHONE_PATTERN = Pattern.compile
             ("^((8|0|((\\+|00)\\d{1,2}))[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");
 
+
+    /**
+     * Проверка введенной информации о пользователе
+     *
+     * @param request запрос
+     * @return User информация о пользователе
+     * @throws IncorrectFormDataException
+     */
     @Override
     public User validate(HttpServletRequest request) throws IncorrectFormDataException {
         User user = new User();
@@ -40,6 +50,13 @@ public class UserValidator implements Validator<User> {
         return user;
     }
 
+    /**
+     * Установка кода пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setIdentityIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("identity");
@@ -52,6 +69,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка фамилии пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setSurnameIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("surname");
@@ -62,6 +86,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка имени пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setNameIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("name");
@@ -72,6 +103,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка отчества пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setPatronymicIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("patronymic");
@@ -82,7 +120,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
-
+    /**
+     * Установка читательского билета пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setSubscriptionIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("subscription");
@@ -93,6 +137,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка адреса пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setAddressIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("address");
@@ -103,6 +154,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка домашнего телефона пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setPhoneHomeIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("phoneHome");
@@ -118,6 +176,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка мобильного телефона пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setPhoneMobileIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("phoneMobile");
@@ -133,6 +198,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка email пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setEmailIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("email");
@@ -148,6 +220,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка логина пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setLoginIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("login");
@@ -158,6 +237,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка пароля пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setPasswordIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("password");
@@ -168,6 +254,13 @@ public class UserValidator implements Validator<User> {
         }
     }
 
+    /**
+     * Установка роли пользователя, если значение корректно
+     *
+     * @param request запрос
+     * @param user    данные о пользователе
+     * @throws IncorrectFormDataException
+     */
     private void setRoleIfValid(HttpServletRequest request, User user) throws IncorrectFormDataException {
         String parameter;
         parameter = request.getParameter("role");

@@ -17,9 +17,20 @@ import javax.servlet.http.HttpServletResponse;
  * Created by Gubanov Andrey on 20.01.2016.
  */
 
+/**
+ * Сохранение экземпляра книги
+ */
 public class LibrarianBookSaveAction extends LibrarianAction {
     private static Logger logger = Logger.getLogger(LibrarianBookSaveAction.class);
 
+    /**
+     * Сохранение экземпляра книги
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/search/card/usages.html");
@@ -29,11 +40,11 @@ public class LibrarianBookSaveAction extends LibrarianAction {
             BookService service = factory.getService(BookService.class);
             service.save(book);
             forward.getAttributes().put("identity", book.getCard().getIdentity());
-            forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.instanceData")+
-                    " "+book.getInventoryNumber()+" "+MessageManager.getInstance(request).getProperty("message.savedSuccessfully"));
+            forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.instanceData") +
+                    " " + book.getInventoryNumber() + " " + MessageManager.getInstance(request).getProperty("message.savedSuccessfully"));
             logger.info(String.format("User \"%s\" saved book with identity %d", getAuthorizedUser().getLogin(), book.getIdentity()));
         } catch (IncorrectFormDataException e) {
-            forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.incorrectData"));
+            forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.incorrectParameter") + " " + e.getMessage());
             logger.warn(String.format("Incorrect data was found when user \"%s\" tried to save book", getAuthorizedUser().getLogin()), e);
         }
         return forward;

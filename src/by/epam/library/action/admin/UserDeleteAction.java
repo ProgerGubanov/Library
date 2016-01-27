@@ -20,9 +20,20 @@ import java.util.List;
  * Created by Gubanov Andrey on 05.01.2016.
  */
 
+/**
+ * Удаление пользователя
+ */
 public class UserDeleteAction extends AdministratorAction {
     private static Logger logger = Logger.getLogger(UserDeleteAction.class);
 
+    /**
+     * Удаление пользователя
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/user/list.html");

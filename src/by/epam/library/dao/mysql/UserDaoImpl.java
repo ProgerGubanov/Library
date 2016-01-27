@@ -17,9 +17,19 @@ import java.util.List;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Реализация DAO для класса User - пользователь
+ */
 public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     private static Logger logger = Logger.getLogger(UserDaoImpl.class);
 
+    /**
+     * Извлечение информации из набора данных в объект user
+     *
+     * @param resultSet набор данных
+     * @return возвращаем объект user
+     * @throws SQLException
+     */
     public static User getUserInfoFromResultSet(ResultSet resultSet) throws SQLException {
         User user = new User();
         user.setIdentity(resultSet.getInt("IdUser"));
@@ -37,6 +47,13 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
         return user;
     }
 
+    /**
+     * Добавление записи в таблицу User
+     *
+     * @param user объект для сохранения в базе данных
+     * @return возвращаем автоинкрементное поле
+     * @throws PersistentException
+     */
     @Override
     public Integer create(User user) throws PersistentException {
         final String SQL_INSERT_USER = "INSERT INTO `library`.`User` (`Surname`, `Name`, `Patronymic`, `Subscription`, " +
@@ -73,18 +90,25 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение одной записи из таблицы User
+     *
+     * @param identity уникальный код записи (IdUser)
+     * @return объект user
+     * @throws PersistentException
+     */
     @Override
     public User read(Integer identity) throws PersistentException {
         final String SQL_SELECT_USER = "SELECT `IdUser`, `Surname`, `Name`, `Patronymic`, `Subscription`, `Address`, `PhoneHome`, " +
@@ -110,18 +134,24 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Обновление записи в таблице User
+     *
+     * @param user объект с новой информацией
+     * @throws PersistentException
+     */
     @Override
     public void update(User user) throws PersistentException {
         final String SQL_UPDATE_USER = "UPDATE `library`.`User` SET `Surname` = ?, `Name` = ?, `Patronymic` = ?, " +
@@ -152,11 +182,17 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Удаление записи из таблицы User
+     *
+     * @param identity уникальный код записи (IdUser)
+     * @throws PersistentException
+     */
     @Override
     public void delete(Integer identity) throws PersistentException {
         final String SQL_DELETE_USER = "DELETE FROM `library`.`User` " +
@@ -174,11 +210,19 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о пользователе по его логину и паролю
+     *
+     * @param login    логин пользователя
+     * @param password md5 пароля
+     * @return user информация о пользователе
+     * @throws PersistentException
+     */
     @Override
     public User read(String login, String password) throws PersistentException {
         final String SQL_SELECT_USER_BY_LOGIN = "SELECT `IdUser`, `Surname`, `Name`, `Patronymic`, `Subscription`, `Address`, `PhoneHome`, " +
@@ -205,18 +249,24 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о всех пользователях
+     *
+     * @return List<User> список пользователей
+     * @throws PersistentException
+     */
     @Override
     public List<User> findAllUsers() throws PersistentException {
         final String SQL_SELECT_ALL_USERS = "SELECT `IdUser`, `Surname`, `Name`, `Patronymic`, `Subscription`, `Address`, `PhoneHome`, " +
@@ -243,18 +293,25 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о пользователях по номеру читательского билета
+     *
+     * @param subscription номер читательского билета
+     * @return List<User> список пользователей
+     * @throws PersistentException
+     */
     @Override
     public List<User> findBySubscription(String subscription) throws PersistentException {
         if (subscription == null) {
@@ -285,18 +342,25 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о пользователях по фамилии
+     *
+     * @param surname фамилия
+     * @return List<User> список пользователей
+     * @throws PersistentException
+     */
     @Override
     public List<User> findBySurname(String surname) throws PersistentException {
         if (surname == null) {
@@ -327,16 +391,15 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
-
 }

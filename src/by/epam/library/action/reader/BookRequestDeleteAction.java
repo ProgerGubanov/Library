@@ -13,9 +13,20 @@ import javax.servlet.http.HttpServletResponse;
  * Created by Gubanov Andrey on 06.01.2016.
  */
 
+/**
+ * Удаление заявки на книгу
+ */
 public class BookRequestDeleteAction extends ReaderAction {
     private static Logger logger = Logger.getLogger(BookRequestDeleteAction.class);
 
+    /**
+     * Удаление заявки на книгу
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/reader/requestlist.html");

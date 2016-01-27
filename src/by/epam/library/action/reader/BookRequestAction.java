@@ -17,9 +17,20 @@ import javax.servlet.http.HttpServletResponse;
  * Created by Gubanov Andrey on 06.01.2016.
  */
 
+/**
+ * Формирование заявки на книгу
+ */
 public class BookRequestAction extends ReaderAction {
     private static Logger logger = Logger.getLogger(BookRequestAction.class);
 
+    /**
+     * Формирование заявки на книгу
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/reader/requestlist.html");

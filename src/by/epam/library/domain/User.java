@@ -4,6 +4,9 @@ package by.epam.library.domain;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Класс пользователь
+ */
 public class User extends Entity {
     private String surname;
     private String name;
@@ -105,6 +108,11 @@ public class User extends Entity {
         this.password = password;
     }
 
+    /**
+     * Переопределение equals()
+     * @param o Object
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -126,6 +134,10 @@ public class User extends Entity {
 
     }
 
+    /**
+     * Переопределение hashCode()
+     * @return int hashCode
+     */
     @Override
     public int hashCode() {
         int result = surname.hashCode();

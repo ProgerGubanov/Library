@@ -17,9 +17,19 @@ import java.util.List;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Реализация DAO для класса Order - оформленный заказ (выданная книга)
+ */
 public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
     private static Logger logger = Logger.getLogger(OrderDaoImpl.class);
 
+    /**
+     * Извлечение информации из набора данных в объект order
+     *
+     * @param resultSet набор данных
+     * @return возвращаем объект order
+     * @throws SQLException
+     */
     public static Order getOrderInfoFromResultSet(ResultSet resultSet) throws SQLException {
         Order order = new Order();
         order.setIdentity(resultSet.getInt("IdOrder"));
@@ -43,6 +53,13 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
         return order;
     }
 
+    /**
+     * Добавление записи в таблицу Order
+     *
+     * @param order объект для сохранения в базе данных
+     * @return возвращаем автоинкрементное поле
+     * @throws PersistentException
+     */
     @Override
     public Integer create(Order order) throws PersistentException {
         final String SQL_INSERT_ORDER = "INSERT INTO `library`.`Order` (`IdBook`, `IdUser`, `IdLibrarian`, `DatePlannedReturn`, " +
@@ -79,18 +96,25 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение одной записи из таблицы Order
+     *
+     * @param identity уникальный код записи (IdOrder)
+     * @return объект order
+     * @throws PersistentException
+     */
     @Override
     public Order read(Integer identity) throws PersistentException {
         final String SQL_SELECT_ORDER = "SELECT `IdOrder`, `IdBook`, `IdUser`, `IdLibrarian`, `DatePlannedReturn`, `DateActualReturn`, " +
@@ -116,18 +140,24 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Обновление записи в таблице Order
+     *
+     * @param order объект с новой информацией
+     * @throws PersistentException
+     */
     @Override
     public void update(Order order) throws PersistentException {
         final String SQL_UPDATE_ORDER = "UPDATE `library`.`Order` SET `IdBook` = ?, `IdUser` = ?, `IdLibrarian` = ?, " +
@@ -157,11 +187,17 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Удаление записи из таблицы Order
+     *
+     * @param identity уникальный код записи (IdOrder)
+     * @throws PersistentException
+     */
     @Override
     public void delete(Integer identity) throws PersistentException {
         final String SQL_DELETE_ORDER = "DELETE FROM `library`.`Order` " +
@@ -179,11 +215,17 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о всех заказах (выданных книгах)
+     *
+     * @return List<Order> список заказов
+     * @throws PersistentException
+     */
     @Override
     public List<Order> read() throws PersistentException {
         final String SQL_SELECT_ALL_ORDER = "SELECT `IdOrder`, `IdBook`, `IdUser`, `IdLibrarian`, `DatePlannedReturn`, " +
@@ -209,18 +251,26 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о всех полученных книгах читателя
+     *
+     * @param idUserInput        код читателя
+     * @param isDateActualReturn если значение true - список содержит только не возвращенные книги, иначе - все заказанные ранее
+     * @return List<Order> список заказов
+     * @throws PersistentException
+     */
     @Override
     public List<Order> readByIdUser(int idUserInput, boolean isDateActualReturn) throws PersistentException {
         final String SQL_SELECT_ORDER_BY_ID_USER;
@@ -270,18 +320,25 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о выданных книгах библиотекарем
+     *
+     * @param idUserInput код библиотекаря
+     * @return List<Order> список заказов
+     * @throws PersistentException
+     */
     @Override
     public List<Order> readByIdLibrarian(int idUserInput) throws PersistentException {
         final String SQL_SELECT_ORDER_BY_ID_LIBRARIAN = "SELECT `IdOrder`, `library`.`Order`.`IdBook`, `IdUser`, `IdLibrarian`, " +
@@ -318,14 +375,14 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }

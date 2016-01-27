@@ -19,7 +19,19 @@ import java.util.List;
  * Created by Gubanov Andrey on 05.01.2016.
  */
 
+/**
+ * Корректировка информации о пользователе
+ */
 public class UserEditAction extends AdministratorAction {
+
+    /**
+     * Корректировка информации о пользователе
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         request.setAttribute("roles", Role.values());

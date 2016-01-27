@@ -9,10 +9,25 @@ import java.util.List;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Интерфейс по работе с книгами в ДАО
+ */
 public interface BookDao extends Dao<Book> {
-    Book readByInventoryNumber(String inventoryNumber) throws PersistentException;
-
+    /**
+     * Чтение информации о книгах по их карточке (все экземпляры одной книги)
+     *
+     * @param idCardInput код карточки
+     * @return List<Book> список книг
+     * @throws PersistentException
+     */
     List<Book> readByIdCard(int idCardInput) throws PersistentException;
 
+    /**
+     * Подсчет количества доступных экземпляров книги по коду карточки
+     *
+     * @param idCardInput код карточки
+     * @return countFreeBooks количество доступных книг
+     * @throws PersistentException
+     */
     int countFreeBooks(int idCardInput) throws PersistentException;
 }

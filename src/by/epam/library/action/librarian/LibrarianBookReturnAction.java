@@ -15,9 +15,20 @@ import java.util.Date;
  * Created by Gubanov Andrey on 05.01.2016.
  */
 
+/**
+ * Возврат книги читателем в библиотеку
+ */
 public class LibrarianBookReturnAction extends LibrarianAction {
     private static Logger logger = Logger.getLogger(LibrarianBookReturnAction.class);
 
+    /**
+     * Возврат книги читателем в библиотеку
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/librarian/usages.html");

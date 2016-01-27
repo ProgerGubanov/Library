@@ -12,9 +12,20 @@ import by.epam.library.exception.PersistentException;
  * Created by Gubanov Andrey on 12.01.2016.
  */
 
+/**
+ * Выход (logout) пользователя
+ */
 public class LogoutAction extends AuthorizedUserAction {
     private static Logger logger = Logger.getLogger(LogoutAction.class);
 
+    /**
+     * Выход (logout) пользователя
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         User user = getAuthorizedUser();

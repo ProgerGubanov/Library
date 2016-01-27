@@ -13,13 +13,29 @@ import by.epam.library.exception.PersistentException;
  * Created by Gubanov Andrey on 10.01.2016.
  */
 
+/**
+ * Реализация интерфейса ActionManager
+ */
 public class ActionManagerImpl implements ActionManager {
     private ServiceFactory factory;
 
+    /**
+     * Конструктор
+     * @param factory фабрика ServiceFactory
+     */
     public ActionManagerImpl(ServiceFactory factory) {
         this.factory = factory;
     }
 
+    /**
+     * Выполнение перехода
+     *
+     * @param action   действие
+     * @param request  запрос
+     * @param response ответ
+     * @return Forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward execute(Action action, HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         action.setFactory(factory);
@@ -41,6 +57,9 @@ public class ActionManagerImpl implements ActionManager {
         return forward;
     }
 
+    /**
+     * Закрытие действия
+     */
     @Override
     public void close() {
         factory.close();

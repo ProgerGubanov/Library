@@ -17,9 +17,20 @@ import java.util.GregorianCalendar;
  * Created by Gubanov Andrey on 20.01.2016.
  */
 
+/**
+ * Выдача книги читателю из библиотеки
+ */
 public class LibrarianBookIssueAction extends LibrarianAction {
     private static Logger logger = Logger.getLogger(LibrarianBookReturnAction.class);
 
+    /**
+     * Выдача книги читателю из библиотеки
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/librarian/usages.html");
@@ -72,8 +83,8 @@ public class LibrarianBookIssueAction extends LibrarianAction {
             // изменяем местоположение книги, создаем в заказах запись с выданной книгой, удаляем заявку
             bookIssueService.issueBook(book, order, requestCard);
 
-            forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.book")+" "+
-                    book.getInventoryNumber()+" "+MessageManager.getInstance(request).getProperty("message.successfullyIssued"));
+            forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.book") + " " +
+                    book.getInventoryNumber() + " " + MessageManager.getInstance(request).getProperty("message.successfullyIssued"));
             forward.getAttributes().put("readerIdentity", readerIdentity);
             logger.info(String.format("User \"%s\" issuing book with book identity %d", getAuthorizedUser().getLogin(), book.getIdentity()));
         } catch (NumberFormatException e) {

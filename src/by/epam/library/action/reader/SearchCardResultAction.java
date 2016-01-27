@@ -14,7 +14,19 @@ import by.epam.library.exception.PersistentException;
  * Created by Gubanov Andrey on 10.01.2016.
  */
 
+/**
+ * Вывод результата поиска карточки книги
+ */
 public class SearchCardResultAction extends ReaderAction {
+
+    /**
+     * Вывод результата поиска карточки книги
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @return forward
+     * @throws PersistentException
+     */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/search/card/result.jsp", false);

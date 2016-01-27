@@ -6,6 +6,9 @@ import java.util.Date;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Класс заказ (выданные книги)
+ */
 public class Order extends Entity {
     private Book book;
     private User user;
@@ -15,62 +18,138 @@ public class Order extends Entity {
     private Date dateIssue;
     private boolean isReadingRoom;
 
+    /**
+     * Получение книги
+     *
+     * @return book книга
+     */
     public Book getBook() {
         return book;
     }
 
+    /**
+     * Установка книги
+     *
+     * @param book книга
+     */
     public void setBook(Book book) {
         this.book = book;
     }
 
+    /**
+     * Получение читаталя
+     *
+     * @return user читатель
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     * Установка читателя
+     *
+     * @param user читатель
+     */
     public void setUser(User user) {
         this.user = user;
     }
 
+    /**
+     * Получение библиотекаря
+     *
+     * @return user библиотекарь
+     */
     public User getLibrarian() {
         return librarian;
     }
 
+    /**
+     * Установка библиотекаря
+     *
+     * @param librarian библиотекарь
+     */
     public void setLibrarian(User librarian) {
         this.librarian = librarian;
     }
 
+    /**
+     * Получение даты планируемого возврата книги
+     *
+     * @return Date дата планируемого возврата
+     */
     public Date getDatePlannedReturn() {
         return datePlannedReturn;
     }
 
+    /**
+     * Установка даты планируемого возврата книги
+     *
+     * @param datePlannedReturn дата планируемого возврата книги
+     */
     public void setDatePlannedReturn(Date datePlannedReturn) {
         this.datePlannedReturn = datePlannedReturn;
     }
 
+    /**
+     * Получение даты возврата книги
+     *
+     * @return Date дата возврата книги
+     */
     public Date getDateActualReturn() {
         return dateActualReturn;
     }
 
+    /**
+     * Установка даты возврата книги
+     *
+     * @param dateActualReturn дата возврата книги
+     */
     public void setDateActualReturn(Date dateActualReturn) {
         this.dateActualReturn = dateActualReturn;
     }
 
+    /**
+     * Получение даты выдачи книги
+     *
+     * @return Date дата выдачи книги
+     */
     public Date getDateIssue() {
         return dateIssue;
     }
 
+    /**
+     * Установка даты выдачи книги
+     *
+     * @param dateIssue дата выдачи книги
+     */
     public void setDateIssue(Date dateIssue) {
         this.dateIssue = dateIssue;
     }
 
+    /**
+     * Получение признака читального зала
+     *
+     * @return boolean если true - читальный зал, иначе - абонемент
+     */
     public boolean isReadingRoom() {
         return isReadingRoom;
     }
 
+    /**
+     * Установка признака читального зала
+     *
+     * @param isReadingRoom если true - читальный зал, иначе - абонемент
+     */
     public void setIsReadingRoom(boolean isReadingRoom) {
         this.isReadingRoom = isReadingRoom;
     }
 
+    /**
+     * Переопределение equals()
+     *
+     * @param o Object
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -89,6 +168,11 @@ public class Order extends Entity {
 
     }
 
+    /**
+     * Переопределение hashCode()
+     *
+     * @return int hashCode
+     */
     @Override
     public int hashCode() {
         int result = book.hashCode();

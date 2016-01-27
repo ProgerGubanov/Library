@@ -16,6 +16,9 @@ import by.epam.library.exception.PersistentException;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Пул соединений
+ */
 public final class ConnectionPool {
     private static Logger logger = Logger.getLogger(ConnectionPool.class);
 
@@ -31,6 +34,11 @@ public final class ConnectionPool {
     private ConnectionPool() {
     }
 
+    /**
+     * Получение соединения
+     * @return Connection
+     * @throws PersistentException
+     */
     public synchronized Connection getConnection() throws PersistentException {
         PooledConnection connection = null;
         while (connection == null) {
@@ -60,6 +68,10 @@ public final class ConnectionPool {
         return connection;
     }
 
+    /**
+     * Освобождение соединения
+     * @param connection
+     */
     synchronized void freeConnection(PooledConnection connection) {
         try {
             if (connection.isValid(checkConnectionTimeout)) {
@@ -78,6 +90,17 @@ public final class ConnectionPool {
         }
     }
 
+    /**
+     * Инициализация пула соединений
+     * @param driverClass драйвер
+     * @param url URL
+     * @param user пользователь
+     * @param password пароль
+     * @param startSize начальный размер
+     * @param maxSize максимальный размер
+     * @param checkConnectionTimeout тайм-аут соединения
+     * @throws PersistentException
+     */
     public synchronized void init(String driverClass, String url, String user, String password, int startSize, int maxSize, int checkConnectionTimeout) throws PersistentException {
         try {
             destroy();
@@ -98,14 +121,26 @@ public final class ConnectionPool {
 
     private static ConnectionPool instance = new ConnectionPool();
 
+    /**
+     * Получение экземпляра пула
+     * @return ConnectionPool
+     */
     public static ConnectionPool getInstance() {
         return instance;
     }
 
+    /**
+     * Создание коннекта
+     * @return PooledConnection
+     * @throws SQLException
+     */
     private PooledConnection createConnection() throws SQLException {
         return new PooledConnection(DriverManager.getConnection(url, user, password));
     }
 
+    /**
+     * Уничтожение пула соединений
+     */
     public synchronized void destroy() {
         usedConnections.addAll(freeConnections);
         freeConnections.clear();
@@ -118,6 +153,9 @@ public final class ConnectionPool {
         usedConnections.clear();
     }
 
+    /**
+     * Уничтожение пула соединений
+     */
     @Override
     protected void finalize() throws Throwable {
         destroy();

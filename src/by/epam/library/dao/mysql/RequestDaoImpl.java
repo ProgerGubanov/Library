@@ -15,9 +15,19 @@ import java.util.List;
  * Created by Gubanov Andrey on 16.12.2015.
  */
 
+/**
+ * Реализация DAO для класса Request - заявка на получение книги
+ */
 public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
     private static Logger logger = Logger.getLogger(BookDaoImpl.class);
 
+    /**
+     * Извлечение информации из набора данных в объект request (заявка)
+     *
+     * @param resultSet набор данных
+     * @return возвращаем объект request
+     * @throws SQLException
+     */
     public static Request getRequestInfoFromResultSet(ResultSet resultSet) throws SQLException {
         Request request = new Request();
         request.setIdentity(resultSet.getInt("IdRequest"));
@@ -35,6 +45,13 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
         return request;
     }
 
+    /**
+     * Добавление записи в таблицу Reauest
+     *
+     * @param request объект для сохранения в базе данных
+     * @return возвращаем автоинкрементное поле
+     * @throws PersistentException
+     */
     @Override
     public Integer create(Request request) throws PersistentException {
         final String SQL_INSERT_REQUEST = "INSERT INTO `library`.`Request` (`IdCard`, `IdUser`, `IsReadingRoom`) " +
@@ -66,18 +83,25 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение одной записи из таблицы Request
+     *
+     * @param identity уникальный код записи (IdRequest)
+     * @return объект request
+     * @throws PersistentException
+     */
     @Override
     public Request read(Integer identity) throws PersistentException {
         final String SQL_SELECT_REQUEST = "SELECT `IdRequest`, `IdCard`, `IdUser`, `DateRequest`, `IsReadingRoom` " +
@@ -102,18 +126,24 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Обновление записи в таблице Request
+     *
+     * @param request объект с новой информацией
+     * @throws PersistentException
+     */
     @Override
     public void update(Request request) throws PersistentException {
         final String SQL_UPDATE_REQUEST = "UPDATE `library`.`Request` SET `IdCard` = ?, `IdUser` = ?, `DateRequest` = ?, `IsReadingRoom` = ? " +
@@ -139,11 +169,17 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Удаление записи из таблицы Request
+     *
+     * @param identity уникальный код записи (IdRequest)
+     * @throws PersistentException
+     */
     @Override
     public void delete(Integer identity) throws PersistentException {
         final String SQL_DELETE_REQUEST = "DELETE FROM `library`.`Request` " +
@@ -161,11 +197,17 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о всех заявках
+     *
+     * @return List<Request> список заявок
+     * @throws PersistentException
+     */
     @Override
     public List<Request> read() throws PersistentException {
         final String SQL_SELECT_ALL_REQUEST = "SELECT `IdRequest`, `library`.`Request`.`IdCard`, `library`.`Request`.`IdUser`, " +
@@ -206,18 +248,25 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о всех заявках одного читателя
+     *
+     * @param idUserInput код читателя
+     * @return List<Request> список заявок
+     * @throws PersistentException
+     */
     public List<Request> readByIdUser(int idUserInput) throws PersistentException {
         final String SQL_SELECT_REQUEST_BY_ID_USER = "SELECT `IdRequest`, `library`.`Request`.`IdCard`, `IdUser`, " +
                 "`DateRequest`, `IsReadingRoom`, `Author`, `Title`, `Isbn`, `YearPublication` " +
@@ -249,18 +298,26 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Считаем количество заявок указанной книги читателем
+     *
+     * @param idUserInput код читателя
+     * @param idCardInput код карточки книги
+     * @return int количество заявок
+     * @throws PersistentException
+     */
     public int LocateRequestByIdUserAndIdCard(int idUserInput, int idCardInput) throws PersistentException {
         final String SQL_SELECT_REQUEST_BY_ID_USER_AND_ID_CARD = "SELECT COUNT(*) " +
                 "FROM `library`.`Request` " +
@@ -285,22 +342,30 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
 
+    /**
+     * Чтение информации о заявке на книгу читателем
+     *
+     * @param idUserInput код читателя
+     * @param idCardInput код карточки книги
+     * @return request заявка
+     * @throws PersistentException
+     */
     public Request readRequestByIdUserAndIdCard(int idUserInput, int idCardInput) throws PersistentException {
         final String SQL_SELECT_REQUEST_BY_ID_USER_AND_ID_CARD = "SELECT `IdRequest`, `IdCard`, `IdUser`, `DateRequest`, `IsReadingRoom` " +
                 "FROM `library`.`Request` " +
-                "WHERE (`IdUser` = ?) AND (`IdCard` = ?)"; //
+                "WHERE (`IdUser` = ?) AND (`IdCard` = ?)";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -321,16 +386,15 @@ public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
-                logger.error(e.getMessage());
+                logger.error(e);
             }
         }
     }
-
 }
