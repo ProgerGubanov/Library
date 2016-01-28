@@ -7,11 +7,9 @@ import by.epam.library.action.Action;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 05.01.2016.
- */
-
-/**
  * Поиск читателей
+ *
+ * @author Gubanov Andrey
  */
 public class SearchReaderFormAction extends LibrarianAction {
     /**

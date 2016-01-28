@@ -6,11 +6,9 @@ import by.epam.library.domain.User;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Интерфейс по работе с пользователями в ДАО
+ *
+ * @author Gubanov Andrey
  */
 public interface UserDao extends Dao<User> {
     /**

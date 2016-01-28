@@ -10,11 +10,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 /**
- * Created by Gubanov Andrey on 04.01.2016.
- */
-
-/**
  * Фильтр кодировки
+ *
+ * @author Gubanov Andrey
  */
 public class EncodingFilter implements Filter {
 

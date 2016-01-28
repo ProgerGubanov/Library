@@ -3,11 +3,9 @@ package by.epam.library.service;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Фабрика создания сервисов
+ *
+ * @author Gubanov Andrey
  */
 public interface ServiceFactory {
     /**

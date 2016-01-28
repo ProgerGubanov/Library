@@ -6,10 +6,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="u" %>
 
-<c:if test="${!empty language}">
-    <fmt:setLocale value="${language}" scope="session"/>
-</c:if>
-
 <fmt:bundle basename="by/epam/library/local/messages" prefix="card.">
     <c:set var="title"><fmt:message key="titleSearch"/></c:set>
     <u:html title="${title}">

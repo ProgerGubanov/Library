@@ -12,17 +12,17 @@ import by.epam.library.service.UserService;
 import by.epam.library.domain.Role;
 import by.epam.library.domain.User;
 import by.epam.library.exception.PersistentException;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 05.01.2016.
- */
-
-/**
  * Корректировка информации о пользователе
+ *
+ * @author Gubanov Andrey
  */
 public class UserEditAction extends AdministratorAction {
+    private static Logger logger = Logger.getLogger(UserEditAction.class);
 
     /**
      * Корректировка информации о пользователе
@@ -53,6 +53,7 @@ public class UserEditAction extends AdministratorAction {
                 request.setAttribute("isUserUsages", isUserUsages);
             }
         } catch (NumberFormatException e) {
+            logger.warn(String.format("Incorrect data was found when user \"%s\" tried to user editing", getAuthorizedUser().getLogin()), e);
         }
         return null;
     }

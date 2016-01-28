@@ -12,11 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Реализация DAO для класса Request - заявка на получение книги
+ *
+ * @author Gubanov Andrey
  */
 public class RequestDaoImpl extends BaseDaoImpl implements RequestDao {
     private static Logger logger = Logger.getLogger(BookDaoImpl.class);

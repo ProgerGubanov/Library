@@ -9,15 +9,15 @@ import by.epam.library.service.CardService;
 import by.epam.library.action.Action;
 import by.epam.library.domain.Card;
 import by.epam.library.exception.PersistentException;
-
-/**
- * Created by Gubanov Andrey on 10.01.2016.
- */
+import org.apache.log4j.Logger;
 
 /**
  * Вывод результата поиска карточки книги
+ *
+ * @author Gubanov Andrey
  */
 public class SearchCardResultAction extends ReaderAction {
+    private static Logger logger = Logger.getLogger(SearchCardResultAction.class);
 
     /**
      * Вывод результата поиска карточки книги
@@ -42,6 +42,7 @@ public class SearchCardResultAction extends ReaderAction {
         try {
             isbn = request.getParameter("isbn");
         } catch (NumberFormatException e) {
+            logger.warn(String.format("Incorrect data was found when user \"%s\" tried to card searching", getAuthorizedUser().getLogin()), e);
         }
         if (isbn != null) {
             cards = service.findByIsbn(isbn);

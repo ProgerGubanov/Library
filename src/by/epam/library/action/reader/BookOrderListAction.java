@@ -11,11 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 07.01.2016.
- */
-
-/**
  * Получение списка невозвращенных книг читателя
+ *
+ * @author Gubanov Andrey
  */
 public class BookOrderListAction extends ReaderAction {
 

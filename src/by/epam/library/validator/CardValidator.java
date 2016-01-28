@@ -9,11 +9,9 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /**
- * Created by Gubanov Andrey on 20.01.2016.
- */
-
-/**
  * Проверка корректонсти введенных данных карточки
+ *
+ * @author Gubanov Andrey
  */
 public class CardValidator implements Validator<Card> {
     private static final Pattern YEAR_PATTERN = Pattern.compile("^[1-9][0-9]{3}$");

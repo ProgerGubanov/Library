@@ -15,11 +15,9 @@ import by.epam.library.exception.IncorrectFormDataException;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 05.01.2016.
- */
-
-/**
  * Сохранение информации о пользователе
+ *
+ * @author Gubanov Andrey
  */
 public class UserSaveAction extends AdministratorAction {
     private static Logger logger = Logger.getLogger(UserSaveAction.class);

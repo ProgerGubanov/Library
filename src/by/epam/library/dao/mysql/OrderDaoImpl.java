@@ -14,11 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Реализация DAO для класса Order - оформленный заказ (выданная книга)
+ *
+ * @author Gubanov Andrey
  */
 public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
     private static Logger logger = Logger.getLogger(OrderDaoImpl.class);

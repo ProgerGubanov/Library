@@ -6,10 +6,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="u" %>
 
-<c:if test="${!empty language}">
-    <fmt:setLocale value="${language}" scope="session"/>
-</c:if>
-
 <fmt:bundle basename="by/epam/library/local/messages" prefix="user.">
     <c:choose>
         <c:when test="${not empty user}">

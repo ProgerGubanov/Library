@@ -1,11 +1,9 @@
 package by.epam.library.exception;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Обработка исключительных ситуаций при проверке корректности введенных данных
+ *
+ * @author Gubanov Andrey
  */
 public class IncorrectFormDataException extends Exception {
 

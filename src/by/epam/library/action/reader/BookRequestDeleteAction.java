@@ -10,11 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Gubanov Andrey on 06.01.2016.
- */
-
-/**
  * Удаление заявки на книгу
+ *
+ * @author Gubanov Andrey
  */
 public class BookRequestDeleteAction extends ReaderAction {
     private static Logger logger = Logger.getLogger(BookRequestDeleteAction.class);
@@ -36,7 +34,7 @@ public class BookRequestDeleteAction extends ReaderAction {
             service.delete(identity);
             forward.getAttributes().put("message", MessageManager.getInstance(request).getProperty("message.requestDeleted"));
             logger.info(String.format("User \"%s\" deleted request with identity %d", getAuthorizedUser().getLogin(), identity));
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
             logger.warn(String.format("Incorrect data was found when user \"%s\" tried to delete request", getAuthorizedUser().getLogin()), e);
         }
         return forward;

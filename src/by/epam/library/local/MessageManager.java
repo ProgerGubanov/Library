@@ -6,12 +6,16 @@ import java.util.ResourceBundle;
 
 /**
  * Управление локализованными сообщениями
+ *
+ * @author Gubanov Andrey
  */
 public class MessageManager {
+
     /**
      * Имя файла локализации
      */
     public static final String LIBRARY_BUNDLENAME = "by.epam.library.local.messages";
+
     /**
      * Аттрибут локали
      */

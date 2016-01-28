@@ -14,11 +14,9 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * Created by Gubanov Andrey on 20.01.2016.
- */
-
-/**
  * Выдача книги читателю из библиотеки
+ *
+ * @author Gubanov Andrey
  */
 public class LibrarianBookIssueAction extends LibrarianAction {
     private static Logger logger = Logger.getLogger(LibrarianBookReturnAction.class);

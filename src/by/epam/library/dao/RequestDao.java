@@ -6,11 +6,9 @@ import by.epam.library.domain.Request;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Интерфейс по работе с заявкам в ДАО
+ *
+ * @author Gubanov Andrey
  */
 public interface RequestDao extends Dao<Request> {
     /**

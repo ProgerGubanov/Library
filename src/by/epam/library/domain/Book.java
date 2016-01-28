@@ -1,11 +1,9 @@
 package by.epam.library.domain;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Класс книга
+ *
+ * @author Gubanov Andrey
  */
 public class Book extends Entity {
     private String inventoryNumber;

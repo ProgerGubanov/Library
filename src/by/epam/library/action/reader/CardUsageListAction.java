@@ -8,17 +8,18 @@ import by.epam.library.service.CardService;
 import by.epam.library.action.Action;
 import by.epam.library.domain.Card;
 import by.epam.library.exception.PersistentException;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 05.01.2016.
- */
-
-/**
  * Вывод подробной информации о карточке книги и всех ее экземплярах
+ *
+ * @author Gubanov Andrey
  */
 public class CardUsageListAction extends ReaderAction {
+    private static Logger logger = Logger.getLogger(CardUsageListAction.class);
+
     /**
      * Вывод подробной информации о карточке книги и всех ее экземплярах
      *
@@ -58,6 +59,7 @@ public class CardUsageListAction extends ReaderAction {
                 request.setAttribute("countFreeBooks", countFreeBooks);
             }
         } catch (NumberFormatException e) {
+            logger.warn(String.format("Incorrect data was found when user \"%s\" tried to card usage view", getAuthorizedUser().getLogin()), e);
         }
         return forward;
     }

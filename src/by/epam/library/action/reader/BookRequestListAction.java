@@ -11,11 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 08.01.2016.
- */
-
-/**
  * Формирование заявки на книгу
+ *
+ * @author Gubanov Andrey
  */
 public class BookRequestListAction extends ReaderAction {
 

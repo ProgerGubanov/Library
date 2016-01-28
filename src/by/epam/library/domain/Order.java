@@ -3,11 +3,9 @@ package by.epam.library.domain;
 import java.util.Date;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Класс заказ (выданные книги)
+ *
+ * @author Gubanov Andrey
  */
 public class Order extends Entity {
     private Book book;

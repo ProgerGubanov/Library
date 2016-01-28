@@ -3,11 +3,9 @@ package by.epam.library.dao;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Интерфейс фабрики ДАО
+ *
+ * @author Gubanov Andrey
  */
 public interface DaoFactory {
     /**

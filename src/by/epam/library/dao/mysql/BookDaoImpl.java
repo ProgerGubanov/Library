@@ -13,11 +13,9 @@ import by.epam.library.domain.Book;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Реализация DAO для класса Book - книга
+ *
+ * @author Gubanov Andrey
  */
 public class BookDaoImpl extends BaseDaoImpl implements BookDao {
     private static Logger logger = Logger.getLogger(BookDaoImpl.class);

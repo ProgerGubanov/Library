@@ -3,11 +3,9 @@ package by.epam.library.domain;
 import java.util.Date;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Класс заявка
+ *
+ * @author Gubanov Andrey
  */
 public class Request extends Entity {
     private Card card;

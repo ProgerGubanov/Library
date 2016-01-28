@@ -9,10 +9,12 @@ import by.epam.library.domain.Role;
 
 /**
  * Абстрактный класс действий читателя
+ *
+ * @author Gubanov Andrey
  */
 abstract public class ReaderAction extends Action {
     /**
-     * Абстрактный класс действие читателя
+     * Абстрактный класс действий читателя
      */
     public ReaderAction() {
         getAllowRoles().add(Role.READER);

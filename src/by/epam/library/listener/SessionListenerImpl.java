@@ -6,11 +6,9 @@ import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 /**
- * Created by Gubanov Andrey on 26.01.2016.
- */
-
-/**
  * Слушатель сессии
+ *
+ * @author Gubanov Andrey
  */
 public class SessionListenerImpl implements HttpSessionListener {
     private static Logger logger = Logger.getLogger(SessionListenerImpl.class);

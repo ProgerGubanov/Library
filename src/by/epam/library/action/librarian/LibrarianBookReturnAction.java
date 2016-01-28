@@ -12,11 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 /**
- * Created by Gubanov Andrey on 05.01.2016.
- */
-
-/**
  * Возврат книги читателем в библиотеку
+ *
+ * @author Gubanov Andrey
  */
 public class LibrarianBookReturnAction extends LibrarianAction {
     private static Logger logger = Logger.getLogger(LibrarianBookReturnAction.class);

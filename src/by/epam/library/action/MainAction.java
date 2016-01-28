@@ -8,11 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 12.01.2016.
- */
-
-/**
  * Переход на первый пункт меню пользователя
+ *
+ * @author Gubanov Andrey
  */
 public class MainAction extends AuthorizedUserAction {
     /**

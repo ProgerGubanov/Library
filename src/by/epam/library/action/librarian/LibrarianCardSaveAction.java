@@ -14,11 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Gubanov Andrey on 20.01.2016.
- */
-
-/**
  * Сохранение карточки книги
+ *
+ * @author Gubanov Andrey
  */
 public class LibrarianCardSaveAction extends LibrarianAction {
     private static Logger logger = Logger.getLogger(LibrarianCardSaveAction.class);

@@ -17,11 +17,9 @@ import by.epam.library.exception.PersistentException;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 05.01.2016.
- */
-
-/**
  * Удаление пользователя
+ *
+ * @author Gubanov Andrey
  */
 public class UserDeleteAction extends AdministratorAction {
     private static Logger logger = Logger.getLogger(UserDeleteAction.class);

@@ -7,11 +7,9 @@ import by.epam.library.domain.*;
 import by.epam.library.domain.User;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Фабрика валидаторов
+ *
+ * @author Gubanov Andrey
  */
 public class ValidatorFactory {
     private static Map<Class<? extends Entity>, Class<? extends Validator<?>>> validators = new HashMap<>();
@@ -24,6 +22,7 @@ public class ValidatorFactory {
 
     /**
      * Создание валидатора
+     *
      * @param entity сущность
      * @param <Type>
      * @return

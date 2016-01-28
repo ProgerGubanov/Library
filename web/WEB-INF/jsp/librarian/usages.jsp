@@ -8,10 +8,6 @@
 <%@taglib tagdir="/WEB-INF/tags" prefix="u" %>
 <jsp:useBean id="date" class="java.util.Date"/>
 
-<c:if test="${!empty language}">
-    <fmt:setLocale value="${language}" scope="session"/>
-</c:if>
-
 <fmt:bundle basename="by/epam/library/local/messages" prefix="usages.">
     <c:set var="title"><fmt:message key="title"/></c:set>
     <u:html title="${title}">

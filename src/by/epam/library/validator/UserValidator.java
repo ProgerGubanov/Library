@@ -11,15 +11,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Проверка корректонсти введенных данных пользователя
+ *
+ * @author Gubanov Andrey
  */
 public class UserValidator implements Validator<User> {
     private static final Pattern EMAIL_PATTERN = Pattern.compile
-            ("[a-zA-Z]{1}[a-zA-Z\\d\\u002E\\u005F]+@([a-zA-Z]+\\u002E){1,2}((net)|(com)|(org))");
+            ("[a-zA-Z]{1}[a-zA-Z\\d\\u002E\\u005F]+@([a-zA-Z]+\\u002E){1,2}((net)|(com)|(org)|(by)|(ru))");
     private static final Pattern PHONE_PATTERN = Pattern.compile("^\\d[\\d\\(\\)\\ -]{4,14}\\d$");
     private static final Pattern MOBILE_PHONE_PATTERN = Pattern.compile
             ("^((8|0|((\\+|00)\\d{1,2}))[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");

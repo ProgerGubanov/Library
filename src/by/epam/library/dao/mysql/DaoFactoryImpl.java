@@ -12,11 +12,9 @@ import by.epam.library.dao.pool.ConnectionPool;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Фабрика DAO
+ *
+ * @author Gubanov Andrey
  */
 public class DaoFactoryImpl implements DaoFactory {
     private static Logger logger = Logger.getLogger(DaoFactoryImpl.class);

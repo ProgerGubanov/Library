@@ -24,7 +24,9 @@ import by.epam.library.dao.pool.ConnectionPool;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 12.01.2016.
+ * Сервлет
+ *
+ * @author Gubanov Andrey
  */
 
 public class DispatcherServlet extends HttpServlet {
@@ -42,6 +44,9 @@ public class DispatcherServlet extends HttpServlet {
     public static final int DB_POOL_MAX_SIZE = 1000;
     public static final int DB_POOL_CHECK_CONNECTION_TIMEOUT = 0;
 
+    /**
+     * Инициализация сервлета
+     */
     public void init() {
         try {
             Logger root = Logger.getRootLogger();
@@ -56,18 +61,48 @@ public class DispatcherServlet extends HttpServlet {
         }
     }
 
+    /**
+     * Получение фабрики ActionManager
+     *
+     * @return ActionManagerFactory
+     * @throws PersistentException
+     */
     public ActionManagerFactory getFactory() throws PersistentException {
         return new ActionManagerFactoryImpl(new ServiceFactoryImpl(new DaoFactoryImpl()));
     }
 
+    /**
+     * Выполнение Get
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @throws IOException
+     * @throws ServletException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         process(request, response);
     }
 
+    /**
+     * Выполнение Post
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @throws IOException
+     * @throws ServletException
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         process(request, response);
     }
 
+    /**
+     * Обработка запросов
+     *
+     * @param request  запрос
+     * @param response ответ
+     * @throws IOException
+     * @throws ServletException
+     */
     private void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Action action = (Action) request.getAttribute("action");
         try {

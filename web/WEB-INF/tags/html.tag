@@ -20,4 +20,3 @@
 </div>
 </body>
 </html>
-</fmt:bundle>

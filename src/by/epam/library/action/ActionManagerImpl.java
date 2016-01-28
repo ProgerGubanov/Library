@@ -10,17 +10,16 @@ import by.epam.library.service.ServiceFactory;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 10.01.2016.
- */
-
-/**
  * Реализация интерфейса ActionManager
+ *
+ * @author Gubanov Andrey
  */
 public class ActionManagerImpl implements ActionManager {
     private ServiceFactory factory;
 
     /**
      * Конструктор
+     *
      * @param factory фабрика ServiceFactory
      */
     public ActionManagerImpl(ServiceFactory factory) {

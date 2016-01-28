@@ -11,11 +11,9 @@ import by.epam.library.domain.User;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 05.01.2016.
- */
-
-/**
  * Список пользователей
+ *
+ * @author Gubanov Andrey
  */
 public class UserListAction extends AdministratorAction {
 

@@ -3,11 +3,9 @@ package by.epam.library.action;
 import by.epam.library.service.ServiceFactory;
 
 /**
- * Created by Gubanov Andrey on 10.01.2016.
- */
-
-/**
  * Реализация фабрики ActionManagerFactory
+ *
+ * @author Gubanov Andrey
  */
 public class ActionManagerFactoryImpl implements ActionManagerFactory {
     private ServiceFactory factory;

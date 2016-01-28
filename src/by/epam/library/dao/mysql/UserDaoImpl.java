@@ -14,11 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Реализация DAO для класса User - пользователь
+ *
+ * @author Gubanov Andrey
  */
 public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     private static Logger logger = Logger.getLogger(UserDaoImpl.class);

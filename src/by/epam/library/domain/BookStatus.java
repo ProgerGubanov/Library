@@ -1,11 +1,9 @@
 package by.epam.library.domain;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Список возможных статусов книги
+ *
+ * @author Gubanov Andrey
  */
 public enum BookStatus {
     INLIBRARY("В библиотеке"),
@@ -20,6 +18,7 @@ public enum BookStatus {
 
     /**
      * Получение наименования статуса
+     *
      * @return наименование статуса
      */
     public String getName() {
@@ -28,6 +27,7 @@ public enum BookStatus {
 
     /**
      * Получение кода статуса
+     *
      * @return код статуса
      */
     public Integer getIdentity() {
@@ -36,6 +36,7 @@ public enum BookStatus {
 
     /**
      * Получение наименования статуса по его коду
+     *
      * @param identity код статуса
      * @return BookStatus статус книги
      */

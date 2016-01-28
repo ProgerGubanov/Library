@@ -4,11 +4,9 @@ import by.epam.library.action.Action;
 import by.epam.library.domain.Role;
 
 /**
- * Created by Gubanov Andrey on 05.01.2016.
- */
-
-/**
  * Абстрактный класс действий администратора
+ *
+ * @author Gubanov Andrey
  */
 abstract public class AdministratorAction extends Action {
 

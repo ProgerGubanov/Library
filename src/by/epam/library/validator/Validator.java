@@ -6,13 +6,10 @@ import by.epam.library.domain.Entity;
 import by.epam.library.exception.IncorrectFormDataException;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Интерфейс валидатора по проверке вводимых данных
  *
  * @param <Type> сущность
+ * @author Gubanov Andrey
  */
 public interface Validator<Type extends Entity> {
     /**

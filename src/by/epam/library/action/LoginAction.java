@@ -16,11 +16,9 @@ import by.epam.library.exception.PersistentException;
 import by.epam.library.local.MessageManager;
 
 /**
- * Created by Gubanov Andrey on 10.01.2016.
- */
-
-/**
  * Действие авторизации пользователя
+ *
+ * @author Gubanov Andrey
  */
 public class LoginAction extends Action {
     private static Logger logger = Logger.getLogger(LoginAction.class);

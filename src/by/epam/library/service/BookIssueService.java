@@ -6,11 +6,9 @@ import by.epam.library.domain.Request;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Интерфейс сервиса выдачи книги
+ *
+ * @author Gubanov Andrey
  */
 public interface BookIssueService extends Service {
     /**

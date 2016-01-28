@@ -13,11 +13,9 @@ import org.apache.log4j.Logger;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Пул соединений
+ *
+ * @author Gubanov Andrey
  */
 public final class ConnectionPool {
     private static Logger logger = Logger.getLogger(ConnectionPool.class);
@@ -36,6 +34,7 @@ public final class ConnectionPool {
 
     /**
      * Получение соединения
+     *
      * @return Connection
      * @throws PersistentException
      */
@@ -49,6 +48,7 @@ public final class ConnectionPool {
                         try {
                             connection.getConnection().close();
                         } catch (SQLException e) {
+                            logger.error("Unable to close the database connection", e);
                         }
                         connection = null;
                     }
@@ -70,6 +70,7 @@ public final class ConnectionPool {
 
     /**
      * Освобождение соединения
+     *
      * @param connection
      */
     synchronized void freeConnection(PooledConnection connection) {
@@ -86,18 +87,20 @@ public final class ConnectionPool {
             try {
                 connection.getConnection().close();
             } catch (SQLException e2) {
+                logger.error("Unable to close the database connection", e2);
             }
         }
     }
 
     /**
      * Инициализация пула соединений
-     * @param driverClass драйвер
-     * @param url URL
-     * @param user пользователь
-     * @param password пароль
-     * @param startSize начальный размер
-     * @param maxSize максимальный размер
+     *
+     * @param driverClass            драйвер
+     * @param url                    URL
+     * @param user                   пользователь
+     * @param password               пароль
+     * @param startSize              начальный размер
+     * @param maxSize                максимальный размер
      * @param checkConnectionTimeout тайм-аут соединения
      * @throws PersistentException
      */
@@ -123,6 +126,7 @@ public final class ConnectionPool {
 
     /**
      * Получение экземпляра пула
+     *
      * @return ConnectionPool
      */
     public static ConnectionPool getInstance() {
@@ -131,6 +135,7 @@ public final class ConnectionPool {
 
     /**
      * Создание коннекта
+     *
      * @return PooledConnection
      * @throws SQLException
      */
@@ -148,6 +153,7 @@ public final class ConnectionPool {
             try {
                 connection.getConnection().close();
             } catch (SQLException e) {
+                logger.error("Unable to close the database connection", e);
             }
         }
         usedConnections.clear();

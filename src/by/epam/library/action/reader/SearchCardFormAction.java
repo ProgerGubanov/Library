@@ -7,11 +7,9 @@ import by.epam.library.action.Action;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 10.01.2016.
- */
-
-/**
  * Поиск карточки книги
+ *
+ * @author Gubanov Andrey
  */
 public class SearchCardFormAction extends ReaderAction {
 

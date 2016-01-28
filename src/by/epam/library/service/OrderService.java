@@ -6,11 +6,9 @@ import by.epam.library.exception.PersistentException;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Интерфейс сервиса для работы с заказами
+ *
+ * @author Gubanov Andrey
  */
 public interface OrderService extends Service {
 

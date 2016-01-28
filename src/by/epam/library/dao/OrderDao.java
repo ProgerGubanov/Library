@@ -6,11 +6,9 @@ import by.epam.library.domain.Order;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Интерфейс по работе с заказами в ДАО
+ *
+ * @author Gubanov Andrey
  */
 public interface OrderDao extends Dao<Order> {
     /**

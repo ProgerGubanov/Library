@@ -6,11 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 10.01.2016.
- */
-
-/**
  * Интерфейс менеджера действий
+ *
+ * @author Gubanov Andrey
  */
 public interface ActionManager {
     /**

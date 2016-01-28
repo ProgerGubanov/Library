@@ -23,11 +23,9 @@ import by.epam.library.action.Action;
 import by.epam.library.action.MainAction;
 
 /**
- * Created by Gubanov Andrey on 12.01.2016.
- */
-
-/**
  * Фильтр безопасности
+ *
+ * @author Gubanov Andrey
  */
 public class SecurityFilter implements Filter {
     private static Logger logger = Logger.getLogger(SecurityFilter.class);

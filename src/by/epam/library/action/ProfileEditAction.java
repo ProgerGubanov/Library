@@ -6,11 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 12.01.2016.
- */
-
-/**
  * Действие редактирование профиля
+ *
+ * @author Gubanov Andrey
  */
 public class ProfileEditAction extends AuthorizedUserAction {
     /**

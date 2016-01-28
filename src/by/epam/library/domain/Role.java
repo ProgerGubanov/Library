@@ -1,11 +1,9 @@
 package by.epam.library.domain;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Список возможных ролей пользователя
+ *
+ * @author Gubanov Andrey
  */
 public enum Role {
     ADMINISTRATOR("Администратор"),

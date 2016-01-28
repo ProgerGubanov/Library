@@ -8,19 +8,20 @@ import by.epam.library.exception.PersistentException;
 import by.epam.library.service.OrderService;
 import by.epam.library.service.RequestService;
 import by.epam.library.service.UserService;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 05.01.2016.
- */
-
-/**
  * Вывод информации о читателе
+ *
+ * @author Gubanov Andrey
  */
 public class LibrarianUserInfoAction extends LibrarianAction {
+    private static Logger logger = Logger.getLogger(LibrarianUserInfoAction.class);
+
     /**
      * Вывод информации о читателе
      *
@@ -60,6 +61,7 @@ public class LibrarianUserInfoAction extends LibrarianAction {
                 request.setAttribute("message", message);
             }
         } catch (NumberFormatException e) {
+            logger.warn(String.format("Incorrect data was found when user \"%s\" tried to user info created", getAuthorizedUser().getLogin()), e);
         }
         return forward;
     }

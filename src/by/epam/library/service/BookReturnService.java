@@ -5,11 +5,9 @@ import by.epam.library.domain.Order;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Интерфейс сервиса возврата книги в библиотеку
+ *
+ * @author Gubanov Andrey
  */
 public interface BookReturnService extends Service {
     /**

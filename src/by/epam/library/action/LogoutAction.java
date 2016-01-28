@@ -9,11 +9,9 @@ import by.epam.library.domain.User;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 12.01.2016.
- */
-
-/**
  * Выход (logout) пользователя
+ *
+ * @author Gubanov Andrey
  */
 public class LogoutAction extends AuthorizedUserAction {
     private static Logger logger = Logger.getLogger(LogoutAction.class);

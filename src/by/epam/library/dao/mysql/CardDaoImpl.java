@@ -10,11 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Реализация DAO для класса Card - карточка книги
+ *
+ * @author Gubanov Andrey
  */
 public class CardDaoImpl extends BaseDaoImpl implements CardDao {
     private static Logger logger = Logger.getLogger(CardDaoImpl.class);

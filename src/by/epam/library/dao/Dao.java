@@ -4,16 +4,15 @@ import by.epam.library.domain.Entity;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Интерфейс для работы с ДАО
+ *
  * @param <Type> объект
+ * @author Gubanov Andrey
  */
 public interface Dao<Type extends Entity> {
     /**
      * Создание записи
+     *
      * @param entity объект
      * @return Integer уникальный код созданной записи
      * @throws PersistentException
@@ -22,6 +21,7 @@ public interface Dao<Type extends Entity> {
 
     /**
      * Чтение записи
+     *
      * @param identity код записи
      * @return Type объект
      * @throws PersistentException
@@ -30,6 +30,7 @@ public interface Dao<Type extends Entity> {
 
     /**
      * Изменение записи
+     *
      * @param entity объект
      * @throws PersistentException
      */
@@ -37,6 +38,7 @@ public interface Dao<Type extends Entity> {
 
     /**
      * Удаление записи
+     *
      * @param identity код записи
      * @throws PersistentException
      */

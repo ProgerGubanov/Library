@@ -20,11 +20,9 @@ import java.util.Properties;
 import java.util.concurrent.Executor;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Работа с коннектом в пуле
+ *
+ * @author Gubanov Andrey
  */
 public class PooledConnection implements Connection, Comparable<PooledConnection> {
     private Connection connection;

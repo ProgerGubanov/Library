@@ -14,12 +14,9 @@ import by.epam.library.domain.User;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 10.12.2015.
- */
-
-
-/**
  * Абстрактный класс действий
+ *
+ * @author Gubanov Andrey
  */
 abstract public class Action {
 

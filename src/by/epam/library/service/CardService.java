@@ -7,11 +7,9 @@ import by.epam.library.domain.Book;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Интерфейс сервиса для работы с карточками
+ *
+ * @author Gubanov Andrey
  */
 public interface CardService extends Service {
     /**
@@ -34,6 +32,7 @@ public interface CardService extends Service {
 
     /**
      * Получение карточки по коду записи
+     *
      * @param identity код карточки
      * @return Card карточка
      * @throws PersistentException

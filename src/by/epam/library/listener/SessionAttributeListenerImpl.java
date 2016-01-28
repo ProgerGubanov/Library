@@ -7,11 +7,9 @@ import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Слушатель аттрибутов сессии
+ *
+ * @author Gubanov Andrey
  */
 @WebListener
 public class SessionAttributeListenerImpl implements HttpSessionAttributeListener {

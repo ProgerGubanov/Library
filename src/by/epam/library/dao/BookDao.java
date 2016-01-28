@@ -6,11 +6,9 @@ import by.epam.library.exception.PersistentException;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Интерфейс по работе с книгами в ДАО
+ *
+ * @author Gubanov Andrey
  */
 public interface BookDao extends Dao<Book> {
     /**

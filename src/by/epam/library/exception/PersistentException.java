@@ -1,11 +1,9 @@
 package by.epam.library.exception;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Обработка исключительных ситуаций
+ *
+ * @author Gubanov Andrey
  */
 public class PersistentException extends Exception {
     /**

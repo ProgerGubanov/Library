@@ -6,11 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 22.01.2016.
- */
-
-/**
  * Действие локализации
+ *
+ * @author Gubanov Andrey
  */
 public class LocaleAction extends Action {
 

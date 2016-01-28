@@ -19,11 +19,9 @@ import by.epam.library.action.reader.*;
 import org.apache.log4j.Logger;
 
 /**
- * Created by Gubanov Andrey on 12.01.2016.
- */
-
-/**
  * Фильтр по Uri
+ *
+ * @author Gubanov Andrey
  */
 public class ActionFromUriFilter implements Filter {
     private static Logger logger = Logger.getLogger(ActionFromUriFilter.class);

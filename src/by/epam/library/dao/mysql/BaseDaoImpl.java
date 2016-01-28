@@ -3,11 +3,9 @@ package by.epam.library.dao.mysql;
 import java.sql.Connection;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Абстрактный базовый класс DAO
+ *
+ * @author Gubanov Andrey
  */
 abstract public class BaseDaoImpl {
     protected Connection connection;

@@ -1,11 +1,9 @@
 package by.epam.library.domain;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Класс пользователь
+ *
+ * @author Gubanov Andrey
  */
 public class User extends Entity {
     private String surname;
@@ -110,6 +108,7 @@ public class User extends Entity {
 
     /**
      * Переопределение equals()
+     *
      * @param o Object
      * @return boolean
      */
@@ -136,6 +135,7 @@ public class User extends Entity {
 
     /**
      * Переопределение hashCode()
+     *
      * @return int hashCode
      */
     @Override

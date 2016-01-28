@@ -1,11 +1,9 @@
 package by.epam.library.domain;
 
 /**
- * Created by Gubanov Andrey on 16.12.2015.
- */
-
-/**
  * Класс карточка книги
+ *
+ * @author Gubanov Andrey
  */
 public class Card extends Entity {
     private String author;

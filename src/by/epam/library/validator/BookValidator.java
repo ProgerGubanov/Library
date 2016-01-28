@@ -9,11 +9,9 @@ import by.epam.library.local.MessageManager;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by Gubanov Andrey on 20.01.2016.
- */
-
-/**
  * Проверка корректонсти введенных данных книги
+ *
+ * @author Gubanov Andrey
  */
 public class BookValidator implements Validator<Book> {
 

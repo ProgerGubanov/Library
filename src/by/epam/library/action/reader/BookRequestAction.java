@@ -14,11 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Gubanov Andrey on 06.01.2016.
- */
-
-/**
  * Формирование заявки на книгу
+ *
+ * @author Gubanov Andrey
  */
 public class BookRequestAction extends ReaderAction {
     private static Logger logger = Logger.getLogger(BookRequestAction.class);

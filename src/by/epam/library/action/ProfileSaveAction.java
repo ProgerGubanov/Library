@@ -11,11 +11,9 @@ import by.epam.library.domain.User;
 import by.epam.library.exception.PersistentException;
 
 /**
- * Created by Gubanov Andrey on 12.01.2016.
- */
-
-/**
  * Действие изменения пароля в профиле
+ *
+ * @author Gubanov Andrey
  */
 public class ProfileSaveAction extends AuthorizedUserAction {
     private static Logger logger = Logger.getLogger(ProfileSaveAction.class);

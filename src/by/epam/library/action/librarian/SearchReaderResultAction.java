@@ -10,11 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created by Gubanov Andrey on 07.01.2016.
- */
-
-/**
  * Вывод результата поиска читателей
+ *
+ * @author Gubanov Andrey
  */
 public class SearchReaderResultAction extends LibrarianAction {
 

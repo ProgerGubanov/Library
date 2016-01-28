@@ -3,11 +3,9 @@ package by.epam.library.action;
 import java.io.Serializable;
 
 /**
- * Created by Gubanov Andrey on 12.01.2016.
- */
-
-/**
  * Получение пункта меню
+ *
+ * @author Gubanov Andrey
  */
 public class MenuItem implements Serializable {
     private String url;
