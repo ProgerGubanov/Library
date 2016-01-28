@@ -1,6 +1,9 @@
 package by.epam.library.controller;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,32 +35,44 @@ import by.epam.library.exception.PersistentException;
 public class DispatcherServlet extends HttpServlet {
     private static Logger logger = Logger.getLogger(DispatcherServlet.class);
 
+    public static final String DB_CONFIG_FILE_NAME = "/db_config.properties";
     public static final String LOG_FILE_NAME = "log.txt";
     public static final Level LOG_LEVEL = Level.ALL;
     public static final String LOG_MESSAGE_FORMAT = "%n%d%n%p\t%C.%M:%L%n%m%n";
-
-    public static final String DB_DRIVER_CLASS = "com.mysql.jdbc.Driver";
-    public static final String DB_URL = "jdbc:mysql://localhost:3306/library?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
-    public static final String DB_USER = "library_user";
-    public static final String DB_PASSWORD = "library_password";
-    public static final int DB_POOL_START_SIZE = 10;
-    public static final int DB_POOL_MAX_SIZE = 1000;
-    public static final int DB_POOL_CHECK_CONNECTION_TIMEOUT = 0;
 
     /**
      * Инициализация сервлета
      */
     public void init() {
+        Properties properties = new Properties();
+        InputStream input = null;
         try {
+            input = getClass().getResourceAsStream(DB_CONFIG_FILE_NAME);
+            properties.load(input);
+            String dbDriverClass = properties.getProperty("dbDriverClass");
+            String dbUrl = properties.getProperty("dbUrl");
+            String dbUser = properties.getProperty("dbUser");
+            String dbPassword = properties.getProperty("dbPassword");
+            int dbPoolStartSize = Integer.parseInt(properties.getProperty("dbPoolStartSize"));
+            int dbPoolMaxSize = Integer.parseInt(properties.getProperty("dbPoolMaxSize"));
+            int dbPoolCheckConnectionTimeout = Integer.parseInt(properties.getProperty("dbPoolCheckConnectionTimeout"));
             Logger root = Logger.getRootLogger();
             Layout layout = new PatternLayout(LOG_MESSAGE_FORMAT);
             root.addAppender(new FileAppender(layout, LOG_FILE_NAME, true));
             root.addAppender(new ConsoleAppender(layout));
             root.setLevel(LOG_LEVEL);
-            ConnectionPool.getInstance().init(DB_DRIVER_CLASS, DB_URL, DB_USER, DB_PASSWORD, DB_POOL_START_SIZE, DB_POOL_MAX_SIZE, DB_POOL_CHECK_CONNECTION_TIMEOUT);
+            ConnectionPool.getInstance().init(dbDriverClass, dbUrl, dbUser, dbPassword, dbPoolStartSize, dbPoolMaxSize, dbPoolCheckConnectionTimeout);
         } catch (PersistentException | IOException e) {
             logger.error("It is impossible to initialize application", e);
             destroy();
+        } finally {
+            if (input != null) {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    logger.error("It is impossible to initialize application", e);
+                }
+            }
         }
     }
 

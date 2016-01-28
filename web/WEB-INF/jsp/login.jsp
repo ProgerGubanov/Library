@@ -21,14 +21,16 @@
         <h1><fmt:message key="h1_1"/><BR><fmt:message key="h1_2"/></h1>
     </div>
     <div class="mod-languages">
+        <c:url value="/chooseLanguage.html?language=ru" var="urlRu"/>
+        <c:url value="/chooseLanguage.html?language=en" var="urlEn"/>
         <ul class="lang-inline">
-            <li class="lang-active" dir="ltr">
-                <a href="/chooseLanguage.html?language=ru">
+            <li dir="ltr">
+                <a href="${urlRu}">
                     <img title="RU" alt="RU" src="img/ru.png">
                 </a>
             </li>
-            <li class="" dir="ltr">
-                <a href="/chooseLanguage.html?language=en">
+            <li dir="ltr">
+                <a href="${urlEn}">
                     <img title="EN" alt="EN" src="img/gb.png">
                 </a>
             </li>
