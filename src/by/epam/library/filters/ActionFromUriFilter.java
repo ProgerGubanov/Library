@@ -65,7 +65,7 @@ public class ActionFromUriFilter implements Filter {
     }
 
     /**
-     * Bybwbfkbpfwbz
+     * Инициализация
      *
      * @param filterConfig конфигурация
      * @throws ServletException
