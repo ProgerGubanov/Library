@@ -29,13 +29,15 @@
                 <input type="hidden" name="identity" value="${card.identity}">
             </c:if>
             <label for="author"><fmt:message key="author"/><span class="required"> *</span></label>
-            <input type="text" id="author" name="author" value="${author}" required>
+            <input type="text" maxlength="100" id="author" name="author" value="${author}" required>
             <label for="titlebook"><fmt:message key="titleCard"/><span class="required"> *</span></label>
-            <input type="text" id="titlebook" name="titlebook" value="${titlebook}" required>
+            <input type="text" maxlength="100" id="titlebook" name="titlebook" value="${titlebook}" required>
             <label for="isbn"><fmt:message key="isbn"/><span class="required"> *</span></label>
-            <input type="text" id="isbn" name="isbn" value="${isbn}" required>
+            <input type="text" maxlength="25" id="isbn" name="isbn" value="${isbn}"
+                   pattern="(?:ISBN(?:-1[03])?:? )?(?=[-0-9 ]{17}$|[-0-9X ]{13}$|[0-9X]{10}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?(?:[0-9]+[- ]?){2}[0-9X]"
+                   required>
             <label for="yearPublication"><fmt:message key="yearPublication"/></label>
-            <input type="text" id="yearPublication" name="yearPublication" value="${yearPublication}">
+            <input type="text" maxlength="4" id="yearPublication" name="yearPublication" value="${yearPublication}">
 
             <button type="submit"><fmt:message key="save"/></button>
             <button type="reset"><fmt:message key="reset"/></button>

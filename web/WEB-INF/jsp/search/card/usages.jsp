@@ -67,7 +67,7 @@
                 <c:url value="/librarian/booksave.html" var="bookSaveUrl"/>
                 <form style="display: inline-block" action="${bookSaveUrl}" method="post">
                     <label for="inventoryNumber"><fmt:message key="inventoryNumber"/></label>
-                    <input type="inventoryNumber" id="inventoryNumber" name="inventoryNumber">
+                    <input type="inventoryNumber" maxlength="25" id="inventoryNumber" name="inventoryNumber" required>
                     <input type="hidden" name="identityCard" value="${card.identity}">
                     <button type="submit"><fmt:message key="addInstance"/></button>
                 </form>

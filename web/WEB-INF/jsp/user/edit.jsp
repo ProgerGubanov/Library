@@ -35,23 +35,26 @@
                 <input type="hidden" name="identity" value="${user.identity}">
             </c:if>
             <label for="surname"><fmt:message key="surname"/><span class="required"> *</span></label>
-            <input type="text" id="surname" name="surname" value="${surname}" required>
+            <input type="text" maxlength="30" pattern="[а-яА-ЯёЁa-zA-Z-]+"
+                   id="surname" name="surname" value="${surname}" required>
             <label for="name"><fmt:message key="name"/><span class="required"> *</span></label>
-            <input type="text" id="name" name="name" value="${name}" required>
+            <input type="text" maxlength="30" pattern="[а-яА-ЯёЁa-zA-Z]+"
+                   id="name" name="name" value="${name}" required>
             <label for="patronymic"><fmt:message key="patronymic"/><span class="required"> *</span></label>
-            <input type="text" id="patronymic" name="patronymic" value="${patronymic}" required>
+            <input type="text" maxlength="30" pattern="[а-яА-ЯёЁa-zA-Z]+"
+                   id="patronymic" name="patronymic" value="${patronymic}" required>
             <label for="subscription"><fmt:message key="subscription"/></label>
-            <input type="text" id="subscription" name="subscription" value="${subscription}">
+            <input type="text" maxlength="20" id="subscription" name="subscription" value="${subscription}">
             <label for="address"><fmt:message key="address"/></label>
-            <input type="text" id="address" name="address" value="${address}">
+            <input type="text" maxlength="100" id="address" name="address" value="${address}">
             <label for="phoneHome"><fmt:message key="phoneHome"/></label>
-            <input type="text" id="phoneHome" name="phoneHome" value="${phoneHome}">
+            <input type="text" maxlength="20" id="phoneHome" name="phoneHome" value="${phoneHome}">
             <label for="phoneMobile"><fmt:message key="phoneMobile"/></label>
-            <input type="text" id="phoneMobile" name="phoneMobile" value="${phoneMobile}">
+            <input type="text" maxlength="20" id="phoneMobile" name="phoneMobile" value="${phoneMobile}">
             <label for="email"><fmt:message key="email"/></label>
-            <input type="text" id="email" name="email" value="${email}">
+            <input type="text" maxlength="50" id="email" name="email" value="${email}">
             <label for="login"><fmt:message key="login"/><span class="required"> *</span></label>
-            <input type="text" id="login" name="login" value="${login}" required>
+            <input type="text" maxlength="50" id="login" name="login" value="${login}" required>
 
             <c:choose>
                 <c:when test="${not empty user}">
@@ -60,7 +63,7 @@
                 </c:when>
                 <c:otherwise>
                     <label for="password"><fmt:message key="password"/><span class="required"> *</span></label>
-                    <input type="text" id="password" name="password" value="${password}" required>
+                    <input type="text" maxlength="20" id="password" name="password" value="${password}" required>
                 </c:otherwise>
             </c:choose>
 
