@@ -32,7 +32,7 @@ public class UserSaveAction extends AdministratorAction {
      */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
-        Forward forward = new Forward("/user/list.html"); //    /user/edit.html
+        Forward forward = new Forward("/user/list.html");
         try {
             Validator<User> validator = ValidatorFactory.createValidator(User.class);
             User user = validator.validate(request);
