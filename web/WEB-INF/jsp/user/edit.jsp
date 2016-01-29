@@ -74,7 +74,14 @@
                     <c:if test="${not empty roleIdentity and roleIdentity eq role.identity}">
                         <c:set var="selected" value="selected"/>
                     </c:if>
-                    <option value="${role.identity}" ${selected}>${role.name}</option>
+                    <c:choose>
+                        <c:when test="${empty roleIdentity and role.identity == 2}">
+                            <option value="${role.identity}" selected>${role.name}</option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${role.identity}" ${selected}>${role.name}</option>
+                        </c:otherwise>
+                    </c:choose>
                 </c:forEach>
             </select>
             <button type="submit"><fmt:message key="save"/></button>
